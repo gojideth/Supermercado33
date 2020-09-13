@@ -8,7 +8,7 @@ public class Bill {
     private Date dateOfExpedition;
     private boolean statusPayment;
     private Client payer;
-    private ArrayList <Product> products;
+    private ArrayList <Product> products = new ArrayList<>();
     private Worker casher;
 
     public Bill(int totalPriceProducts, Date dateOfExpedition, boolean statusPayment, Client payer, ArrayList<Product> products, Worker casher) {
@@ -19,6 +19,8 @@ public class Bill {
         this.products = products;
         this.casher = casher;
     }
+
+
 
 
 

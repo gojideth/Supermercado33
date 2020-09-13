@@ -10,4 +10,5 @@ public class Worker extends Person{
         super(age, name, dateBirth, id);
         this.companyStatus = Charge.WORKER;
     }
+
 }
