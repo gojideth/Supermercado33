@@ -32,4 +32,6 @@ public abstract class Product {
     public Quantity getAvailableQuantity() {
         return availableQuantity;
     }
+
+    public abstract String getIndentifier();
 }

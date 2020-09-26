@@ -9,7 +9,8 @@ public class GroomingProducts extends Product {
         super(price, name, quantityForSold, priceOfProvider);
     }
 
-    public static String getINDENTIFIER() {
-        return INDENTIFIER;
+    @Override
+    public String getIndentifier() {
+        return "Aseo";
     }
 }

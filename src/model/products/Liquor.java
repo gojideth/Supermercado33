@@ -5,7 +5,6 @@ import model.supermarket.Product;
 public class Liquor extends Product {
     private double tax;
     private int alcoholAmount;
-    protected static final String INDENTIFIER = "Licor";
 
     public Liquor(double price, String name, int quantityForSold, double priceOfProvider, double tax, int alcoholAmount) {
         super(price, name, quantityForSold, priceOfProvider);
@@ -21,7 +20,8 @@ public class Liquor extends Product {
         return alcoholAmount;
     }
 
-    public static String getINDENTIFIER() {
-        return INDENTIFIER;
+    @Override
+    public String getIndentifier() {
+        return "Licor";
     }
 }
