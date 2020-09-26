@@ -1,4 +1,4 @@
-package model.prodcuts;
+package model.products;
 import model.Product;
 
 import java.util.ArrayList;

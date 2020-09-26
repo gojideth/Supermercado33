@@ -1,11 +1,11 @@
-package model.prodcuts;
+package model.products;
 
 import model.Product;
 import java.util.ArrayList;
 
 
 public class Household extends Product {
-    private ArrayList<Household> householdsProdcuts = new ArrayList();
+
     private int warranty;
 
     public Household(double price, String name, int quantityForSold, double priceOfProvider, int warranty) {
