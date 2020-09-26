@@ -1,4 +1,4 @@
-package model;
+package model.supermarket;
 
 public enum Charge {
     USER("Usuario"), Administrative("Administrador");

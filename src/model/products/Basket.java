@@ -1,12 +1,14 @@
 package model.products;
-import model.Product;
-
-import java.util.ArrayList;
+import model.supermarket.Product;
 
 public class Basket extends Product {
-    private ArrayList<Basket>  basketProduct = new ArrayList();
+    protected static final String IDENTIFIER = "Canasta";
 
     public Basket(double price, String name, int quantityForSold, double priceOfProvider) {
         super(price, name, quantityForSold, priceOfProvider);
+    }
+
+    public static String getIDENTIFIER() {
+        return IDENTIFIER;
     }
 }

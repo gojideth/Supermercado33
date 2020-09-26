@@ -1,15 +1,22 @@
-package model;
+package model.supermarket;
+
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Bill {
     private Date dateOfExpedition;
-    private Client payer;
     private ArrayList <Product> products;
 
-    public Bill(Date dateOfExpedition, Client payer) {
+    public Bill(Date dateOfExpedition) {
         this.dateOfExpedition=dateOfExpedition;
-        this.payer=payer;
         this.products=new ArrayList();
+    }
+
+    public Date getDateOfExpedition() {
+        return dateOfExpedition;
+    }
+
+    public ArrayList<Product> getProducts() {
+        return products;
     }
 }

@@ -1,4 +1,4 @@
-package model;
+package model.supermarket;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -45,7 +45,7 @@ public class Market {
     public void filterLowerPrice(double maxPrice, String typeProduct){
         filters.clear();
         for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getPrice() <= maxPrice && products.get(i).IDENTIFIER.equalsIgnoreCase(typeProduct)){
+            if (products.get(i).getPrice() <= maxPrice && products.get(i).INDENTIFIER.equalsIgnoreCase(typeProduct)){
                 filters.add(products.get(i));
             }
         }
