@@ -20,4 +20,16 @@ public abstract class Product {
     public double getPriceOfProvider() {
         return priceOfProvider;
     }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public Provider getProvider() {
+        return provider;
+    }
+
+    public Quantity getAvailableQuantity() {
+        return availableQuantity;
+    }
 }

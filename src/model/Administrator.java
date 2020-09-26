@@ -18,5 +18,17 @@ public class Administrator extends Person {
 
     }
 
+    public void deleteProduct(){
+
+    }
+
+    public void takeDelivary(){
+
+    }
+
+    public void setEarnings(){
+
+    }
+
 
 }
