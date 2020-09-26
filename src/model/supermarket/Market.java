@@ -27,7 +27,7 @@ public class Market {
     public void filterName(String name){
         filters.clear();
         for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).name.contains(name)){
+            if (products.get(i).name.contains(name)){ //comparar con el identificador
                 filters.add(products.get(i));
             }
         }
