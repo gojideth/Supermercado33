@@ -1,4 +1,4 @@
-package model;
+package model.supermarket;
 
 public abstract class Product {
     public static final double IVA_PERCENTAGE = 0.19;

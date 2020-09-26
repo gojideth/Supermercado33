@@ -1,4 +1,4 @@
-package model;
+package model.supermarket;
 
 public class Quantity {
     private int amount;
