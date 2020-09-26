@@ -10,4 +10,12 @@ public class Client extends Person{
         super(name, dateBirth, id);
         this.charge=charge;
     }
+
+    public void checkAge(){
+
+    }
+
+    public void pay(){
+
+    }
 }
