@@ -45,8 +45,9 @@ public class Market {
     public void filterLowerPrice(double maxPrice, String typeProduct){
         filters.clear();
         for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getPrice() <= maxPrice && products.get(i).INDENTIFIER.equalsIgnoreCase(typeProduct)){
-                filters.add(products.get(i));
+            Product productTemporal = products.get(i);
+            if (productTemporal.getPrice() <= maxPrice && productTemporal.getIndentifier().equalsIgnoreCase(typeProduct)){
+                filters.add(productTemporal);
             }
         }
     }
@@ -60,27 +61,25 @@ public class Market {
         }
     }
 
+    public void filterMaxPrice(double minPrice, String typeProduct){
+        filters.clear();
+        for (int i = 0; i < products.size(); i++) {
+            Product productTemporal = products.get(i);
+            if (productTemporal.getPrice() >= minPrice && productTemporal.getIndentifier().equalsIgnoreCase(typeProduct)){
+                filters.add(productTemporal);
+            }
+        }
+    }
+
+
     public void filterRangePrices(double minPrice, double maxPrice){
         filters.clear();
         for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getPrice() >= minPrice && products.get(i).getPrice() <= maxPrice){
-                filters.add(products.get(i));
+            Product productTemporal = products.get(i);
+            if (productTemporal.getPrice() >= minPrice && productTemporal.getPrice() <= maxPrice){
+                filters.add(productTemporal);
             }
         }
     }
-
-    public Product getProduct (Product product){
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).equals(product)){
-                return products.get(i);
-            }
-        }
-        return null; // implementar exepcion try cash
-    }
-
-    public void alertForQuantity(){
-
-    }
-
 
 }
