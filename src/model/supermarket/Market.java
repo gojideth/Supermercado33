@@ -5,8 +5,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Market {
-    List<Product> products;
-    List<Product> filters;
+    public List<Product> products;
+    private List<Product> filters;
 
     public Market() {
         products = new ArrayList<>();
@@ -81,5 +81,4 @@ public class Market {
             }
         }
     }
-
 }
