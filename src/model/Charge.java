@@ -1,7 +1,7 @@
 package model;
 
 public enum Charge {
-    USER("Usuario"), WORKER("Trabajador"), Administrative("Administrador");
+    USER("Usuario"), Administrative("Administrador");
     private String charge;
 
     Charge(String charge) {
