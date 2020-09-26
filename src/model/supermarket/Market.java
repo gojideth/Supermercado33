@@ -5,8 +5,8 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Market {
-    List<Product> products;
-    List<Product> filters;
+    private List<Product> products;
+    private List<Product> filters;
 
     public Market() {
         products = new ArrayList<>();
@@ -27,7 +27,7 @@ public class Market {
     public void filterName(String name){
         filters.clear();
         for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).name.contains(name)){
+            if (products.get(i).name.contains(name)){ //comparar con el identificador
                 filters.add(products.get(i));
             }
         }
