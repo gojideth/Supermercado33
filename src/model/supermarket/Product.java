@@ -10,9 +10,10 @@ public abstract class Product {
     private Provider provider;
     private Quantity availableQuantity;
 
-    public Product(double price, String name, int quantityForSold, double priceOfProvider) {
+    public Product(double price, String name, int quantityForSold, double priceOfProvider, Quantity quantity) {
         this.price=price;
         this.name=name;
+        this.availableQuantity = quantity;
         this.quantityForSold=quantityForSold;
         this.priceOfProvider=priceOfProvider;
     }

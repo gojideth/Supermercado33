@@ -7,10 +7,11 @@ public class Client extends Person{
     private Market market;
     private Bill bill;
 
-    public Client(String name, Date dateBirth, String id, Charge charge, Bill bill) {
+    public Client(String name, Date dateBirth, String id, Charge charge, Bill bill, Market market) {
         super(name, dateBirth, id);
         this.charge=charge;
         this.bill=bill;
+        this.market = market;
     }
 
     public void orderAlphabet(){

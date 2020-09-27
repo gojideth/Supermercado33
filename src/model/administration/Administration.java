@@ -16,9 +16,9 @@ public class Administration {
     private double earnings;
     private Market market;
 
-    public Administration() {
+    public Administration(Market market) {
         this.earnings = 0;
-        this.market = new Market();
+        this.market = market;
     }
 
     /*protected double addDiscount(String indeifier, int discount){
@@ -29,11 +29,11 @@ public class Administration {
 
     }*/
 
-    protected void addProduct(Product product){
+    public void addProduct(Product product){
         market.products.add(product);
     }
 
-    protected boolean isDeleteProduct(String product){
+    public boolean isDeleteProduct(String product){
         for (int i=0; i<market.products.size(); i++){
             if (market.products.get(i).getName().equals(product)){
                 market.products.remove(i);
@@ -43,7 +43,7 @@ public class Administration {
         return false;
     }
 
-    protected List<Product> checkInventary(){
+    public List<Product> checkInventary(){
         List<Product> productsForOrder = new LinkedList();
         for (int i=0; i<market.products.size(); i++){
             Product productTemporal = market.products.get(i);
@@ -54,7 +54,7 @@ public class Administration {
         return productsForOrder;
     }
 
-    protected double getOrderPrice(List<Product> order){
+    public double getOrderPrice(List<Product> order){
         double price = 0;
         for (int i=0; i<order.size(); i++){
             Product temp = order.get(i);

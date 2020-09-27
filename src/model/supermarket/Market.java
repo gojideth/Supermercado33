@@ -80,4 +80,10 @@ public class Market {
             }
         }
     }
+
+    public void show(){
+        for (int i=0; i<this.products.size(); i++){
+            System.out.println(products.get(i).name);
+        }
+    }
 }
