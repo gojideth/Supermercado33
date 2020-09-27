@@ -7,13 +7,12 @@ import model.supermarket.Client;
 import model.supermarket.Market;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Scanner;
 
 public class TestClient {
     private Market market;
     private Administration admin;
-    private Client [] clients;
+    private Client client;
     private Scanner scanner;
 
     public TestClient() {
@@ -23,13 +22,9 @@ public class TestClient {
     }
 
     public void addClients(){
-        System.out.println("Numero de cliente a agregar ");
-        int numberClients = Integer.parseInt(scanner.nextLine());
-        clients = new Client[numberClients];
-        for (int i = 0; i < numberClients; i++) {
-            String[] dates = scanner.nextLine().split(" ");  //new Date(Integer.parseInt(dates[6]),Integer.parseInt(dates[7]),Integer.parseInt(dates[8]))
-            clients[i] = new Client(dates[0],LocalDate.of(Integer.parseInt(dates[1]),Integer.parseInt(dates[2]),Integer.parseInt(dates[3])), dates[4], Charge.valueOf(dates[5]), new Bill(LocalDate.now()),new Market());
-        }
+        System.out.println("agregar datos de cliente ");
+        String[] dates = scanner.nextLine().split(" ");
+        client = new Client(dates[0], LocalDate.of(Integer.parseInt(dates[1]), Integer.parseInt(dates[2]), Integer.parseInt(dates[3])), dates[4], Charge.valueOf(dates[5]), new Bill(LocalDate.now()), new Market());
         testMenu();
     }
 
@@ -39,8 +34,6 @@ public class TestClient {
         switch (option){
             case 1:
                 System.out.println("Tipo: ");
-                System.out.println("Usuario a evaluar");
-                clients[Integer.parseInt(scanner.nextLine())].filterName(scanner.nextLine());
                 break;
             case 2:
                 System.out.println("Min Precio, max precio");
@@ -74,12 +67,7 @@ public class TestClient {
                 return;
         }
         //.showFilters();
-        temp();
         testMenu();
-    }
-
-    public void temp(){
-        clients[0].filterName("p");
     }
 
     public static void main(String[] args) {
