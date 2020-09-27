@@ -11,6 +11,6 @@ public class EarthProducts extends Product {
 
     @Override
     public String getIndentifier() {
-        return "Frutas";
+        return "FRUTAS";
     }
 }

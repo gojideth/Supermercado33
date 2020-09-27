@@ -12,6 +12,6 @@ public class GroomingProducts extends Product {
 
     @Override
     public String getIndentifier() {
-        return "Aseo";
+        return "ASEO";
     }
 }

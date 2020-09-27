@@ -18,6 +18,6 @@ public class Household extends Product {
 
     @Override
     public String getIndentifier() {
-        return "Electrodomestico";
+        return "ELECTRODOMESTICO";
     }
 }

@@ -10,6 +10,6 @@ public class Basket extends Product {
 
     @Override
     public String getIndentifier() {
-        return "Canasta";
+        return "CANASTA";
     }
 }

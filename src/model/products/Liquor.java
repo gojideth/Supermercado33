@@ -23,6 +23,6 @@ public class Liquor extends Product {
 
     @Override
     public String getIndentifier() {
-        return "Licor";
+        return "LICOR";
     }
 }

@@ -11,7 +11,7 @@ public class PersonalCareProducts extends Product {
 
     @Override
     public String getIndentifier() {
-        return "Personal";
+        return "PERSONAL";
     }
 
 

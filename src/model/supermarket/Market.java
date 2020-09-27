@@ -27,7 +27,16 @@ public class Market {
     public void filterName(String name){
         filters.clear();
         for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).name.contains(name)){ //comparar con el identificador
+            if (products.get(i).name.contains(name)){
+                filters.add(products.get(i));
+            }
+        }
+    }
+
+    public void filterType(String type){
+        filters.clear();
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getIndentifier().contains(type.toUpperCase())){
                 filters.add(products.get(i));
             }
         }
@@ -65,7 +74,7 @@ public class Market {
         filters.clear();
         for (int i = 0; i < products.size(); i++) {
             Product productTemporal = products.get(i);
-            if (productTemporal.getPrice() >= minPrice && productTemporal.getIndentifier().equalsIgnoreCase(typeProduct)){
+            if (productTemporal.getPrice() >= minPrice && productTemporal.getIndentifier().contains(typeProduct.toUpperCase())){
                 filters.add(productTemporal);
             }
         }
@@ -84,6 +93,12 @@ public class Market {
     public void show(){
         for (int i=0; i<this.products.size(); i++){
             System.out.println(products.get(i).name);
+        }
+    }
+
+    public void showFilters(){
+        for (int i=0; i<this.filters.size(); i++){
+            System.out.println(filters.get(i).name);
         }
     }
 }
