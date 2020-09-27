@@ -7,7 +7,7 @@ import model.supermarket.Quantity;
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * @date 26/09/2020
+ * Date: 26/09/2020
  * Clase de los electrodomesticos
  */
 public class Household extends Product {

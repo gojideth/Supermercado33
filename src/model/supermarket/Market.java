@@ -7,7 +7,7 @@ import java.util.List;
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * @date 26/09/2020
+ * Date: 26/09/2020
  * Clase Supermercadp que contiene los productos que se venden y los filtros a estos productos
  */
 public class Market {
@@ -71,8 +71,8 @@ public class Market {
 
     /**
      * Metodo que permite filtrar por un precio maximo a pagar y por un tipo de producto
-     * @param maxPrice
-     * @param typeProduct
+     * @param maxPrice Precio maximo elegido
+     * @param typeProduct Tipo de producto a filtrar
      */
     public void filterLowerPrice(double maxPrice, String typeProduct){
         filters.clear();

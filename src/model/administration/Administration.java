@@ -10,7 +10,7 @@ import java.util.List;
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * @date 26/09/2020
+ * Date: 26/09/2020
  * Clase que permite administrar el sumercardo y surtir el mismo
  */
 public class Administration {
@@ -119,7 +119,7 @@ public class Administration {
 
     /**
      * Metodo que suma las ventas a un contador de ganancias
-     * @param earnings
+     * @param earnings Ganancias
      */
     public void setEarnings(double earnings) {
         this.earnings+=earnings;
