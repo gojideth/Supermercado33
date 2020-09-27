@@ -9,6 +9,13 @@ import org.omg.PortableInterceptor.INACTIVE;
 
 import java.util.Scanner;
 
+/**
+ * @author Martin Santiago Chiquillo Castro
+ * @author Julian Alberto Ardila Arguello
+ * @author Andres Leonardo Amaya Vargas
+ * @date 26/09/2020
+ * Clase que testea la clase Market
+ */
 public class TestMarket {
     private Market market;
     private Administration administration;

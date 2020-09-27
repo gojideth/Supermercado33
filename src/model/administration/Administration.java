@@ -3,10 +3,16 @@ package model.administration;
 import model.supermarket.Market;
 import model.supermarket.Product;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * @author Martin Santiago Chiquillo Castro
+ * @author Julian Alberto Ardila Arguello
+ * @author Andres Leonardo Amaya Vargas
+ * @date 26/09/2020
+ * Clase que permite administrar el sumercardo y surtir el mismo
+ */
 public class Administration {
     private static final int HALF_A_DOZEN = 6;
     private static final int HALF_A_TWO_DOZEN = 30;
@@ -29,10 +35,19 @@ public class Administration {
 
     }*/
 
+    /**
+     * Metodo que agrega un producto a la lista de productos
+     * @param product producto a agregar
+     */
     public void addProduct(Product product){
         market.products.add(product);
     }
 
+    /**
+     * Metodo que elimina un producto de la lista
+     * @param product nombre del producto a eliminar
+     * @return true, si fue eliminado, false si no
+     */
     public boolean isDeleteProduct(String product){
         for (int i=0; i<market.products.size(); i++){
             if (market.products.get(i).getName().equals(product)){
@@ -43,6 +58,10 @@ public class Administration {
         return false;
     }
 
+    /**
+     * Metodo que revisa que en el inventario no queden menos de media docena por producto
+     * @return lista de productos que tienen menos de 6 unidades en inventario
+     */
     public List<Product> checkInventary(){
         List<Product> productsForOrder = new LinkedList();
         for (int i=0; i<market.products.size(); i++){
@@ -54,6 +73,11 @@ public class Administration {
         return productsForOrder;
     }
 
+    /**
+     * Metodo que calcula el costo de la orden para surtir el inventario de la tienda
+     * @param order lista de productos
+     * @return costo de pedido
+     */
     public double getOrderPrice(List<Product> order){
         double price = 0;
         for (int i=0; i<order.size(); i++){
@@ -78,6 +102,9 @@ public class Administration {
         return price;
     }
 
+    /**
+     * Metodo que llena el inventario de la tienda a lo arrojado por checkInventary
+     */
     public void fixInventory(){
         List<Product> products = checkInventary();
         for (int i=0; i<products.size(); i++){
@@ -90,6 +117,10 @@ public class Administration {
         }
     }
 
+    /**
+     * Metodo que suma las ventas a un contador de ganancias
+     * @param earnings
+     */
     public void setEarnings(double earnings) {
         this.earnings+=earnings;
     }
