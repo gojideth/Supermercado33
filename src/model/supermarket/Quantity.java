@@ -18,6 +18,12 @@ public class Quantity {
     }
 
     public void setAmount(int amount) {
-        this.amount=amount;
+        this.amount+=amount;
+    }
+
+    public void restToAmount(int quantity){
+        if (amount - quantity >= 0){
+            this.amount -= quantity;
+        }
     }
 }

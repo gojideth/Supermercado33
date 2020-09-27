@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Market {
-    private List<Product> products;
+    public List<Product> products;
     private List<Product> filters;
 
     public Market() {

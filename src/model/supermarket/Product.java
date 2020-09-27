@@ -34,4 +34,8 @@ public abstract class Product {
     }
 
     public abstract String getIndentifier();
+
+    public String getName() {
+        return name;
+    }
 }
