@@ -18,6 +18,7 @@ import java.util.Scanner;
 public class TestMarket {
     private Market market;
     private Administration administration;
+    private GetDataConsole getDataConsole;
     private Scanner scanner;
     List<Product> proof;
 
@@ -66,7 +67,7 @@ public class TestMarket {
     }
 
     public void addExpectedProducts(){
-        System.out.println("Ingrese valores eperados");
+        System.out.println("Ingrese valores esperados");
         int productsNumber = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < productsNumber; i++) {
             proof.add(test2());
@@ -75,9 +76,12 @@ public class TestMarket {
 
     public int isOk(){
         int count = 0;
-        for (int i = 0; i < proof.size(); i++) {
-            if ( market.getFilters().contains(proof.get(i))){
-               count++;
+        List<Product> temp = market.getFilters();
+        for (int i = 0; i < temp.size(); i++) {
+            for (int j = 0; j < proof.size(); j++) {
+                if (proof.get(i).getName().equals(temp.get(j).getName())){
+                    count++;
+                }
             }
         }
         //return (count == expected)? true : false;
@@ -125,38 +129,49 @@ public class TestMarket {
                 System.out.println("Tipo: ");
                 market.filterType(scanner.nextLine());
                 addExpectedProducts();
-                System.out.println(isOk());
-                System.out.println(proof.size());
-                System.out.println(market.getFilters().get(0).equals(proof.get(0)));
-                //System.out.println(isOk() == Integer.parseInt(scanner.nextLine())? "ok" : "fail");
+                System.out.println(isOk() == Integer.parseInt(scanner.nextLine()));
                 break;
             case 2:
                 System.out.println("Min Precio, max precio");
                 market.filterRangePrices(Double.parseDouble(scanner.nextLine()),Double.parseDouble(scanner.nextLine()));
+                addExpectedProducts();
+                System.out.println(isOk() == Integer.parseInt(scanner.nextLine()));
                 break;
             case 3:
-                System.out.println("Ingrese precio maximo y tipo ");
+                System.out.println("Ingrese precio Minimo a pagar y tipo ");
                 market.filterMaxPrice(Double.parseDouble(scanner.nextLine()),scanner.nextLine());
+                addExpectedProducts();
+                System.out.println(isOk() == Integer.parseInt(scanner.nextLine()));
                 break;
             case 4:
-                System.out.println("Ingrese maximo precio");
+                System.out.println("Ingrese precio Minimo a pagar");
                 market.filterMaxPrice(Double.parseDouble(scanner.nextLine()));
+                addExpectedProducts();
+                System.out.println(isOk() == Integer.parseInt(scanner.nextLine()));
                 break;
             case 5:
-                System.out.println("Ingrese precio minimo y tipo ");
+                System.out.println("Ingrese precio Maximo a pagar y tipo ");
                 market.filterLowerPrice(Double.parseDouble(scanner.nextLine()),scanner.nextLine());
+                addExpectedProducts();
+                System.out.println(isOk() == Integer.parseInt(scanner.nextLine()));
                 break;
             case 6:
-                System.out.println("Ingrese precio minimo");
+                System.out.println("Ingrese precio Maximo a pagar");
                 market.filterLowerPrice(Double.parseDouble(scanner.nextLine()));
+                addExpectedProducts();
+                System.out.println(isOk() == Integer.parseInt(scanner.nextLine()));
                 break;
             case 7:
                 System.out.println("Ordenar alfabeticamente");
                 market.orderAlphabet();
+                addExpectedProducts();
+                System.out.println(isOk() == Integer.parseInt(scanner.nextLine()));
                 break;
             case 8:
                 System.out.println("Ingrese nombre");
                 market.filterName(scanner.nextLine());
+                addExpectedProducts();
+                System.out.println(isOk() == Integer.parseInt(scanner.nextLine()));
                 break;
             case 9:
                 return;
