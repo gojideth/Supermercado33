@@ -96,6 +96,10 @@ public class Market {
         }
     }
 
+    public List<Product> getFilters(){
+        return filters;
+    }
+
     public void showFilters(){
         for (int i=0; i<this.filters.size(); i++){
             System.out.println(filters.get(i).name);
