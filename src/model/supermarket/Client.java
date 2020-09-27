@@ -108,7 +108,7 @@ public class Client extends Person{
         return bill;
     }
 
-    public void showcar(){
+    public void showCar(){
         for (int i=0; i<car.size(); i++){
             System.out.println((i+1) + ". " + car.get(i).formatForBuy());
         }
@@ -127,7 +127,7 @@ public class Client extends Person{
      * Metodo que genera factura
      */
     public void generateBill(){
-        System.out.println("             Supermercado la 33          ");
+        System.out.println("            Supermercado la 33          ");
         System.out.println(getName());
         System.out.println(getId());
         System.out.println(LocalDate.now() + " -- " +LocalTime.now());

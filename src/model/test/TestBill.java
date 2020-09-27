@@ -5,8 +5,6 @@ import model.supermarket.*;
 import model.administration.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class TestBill {
@@ -58,17 +56,17 @@ public class TestBill {
 
     public void buyClient(){
         client.getAllProducts();
-        client.showcar();
+        client.showCar();
         client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));
-        client.showcar();
+        client.showCar();
         client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));
-        client.showcar();
+        client.showCar();
         client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));
-        client.showcar();
+        client.showCar();
         client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));
-        client.showcar();
+        client.showCar();
         client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));
-        client.showcar();
+        client.showCar();
         client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));
         client.generateBill();
     }
