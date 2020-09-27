@@ -7,11 +7,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * Clase que permite administrar el sumercardo y surtir el mismo
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase que permite administrar el sumercardo y surtir el mismo
+ * @date: 26/09/2020
  */
 public class Administration {
     private static final int HALF_A_DOZEN = 6;

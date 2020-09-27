@@ -1,11 +1,11 @@
 package model.supermarket;
 
 /**
+ * Clase que maneja la cantidad de cada producto en el inventario
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase que maneja la cantidad de cada producto en el inventario
+ * @date: 26/09/2020
  */
 public class Quantity {
     private int amount;

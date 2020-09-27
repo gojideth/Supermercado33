@@ -4,11 +4,11 @@ import java.time.LocalDate;
 import java.util.Date;
 
 /**
+ * Clase persona que sera parte de la inforacion del cliente
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase persona que sera parte de la inforacion del cliente
+ * @date: 26/09/2020
  */
 public abstract class Person {
     private String name;

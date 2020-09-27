@@ -2,11 +2,11 @@ package model.products;
 import model.supermarket.Product;
 import model.supermarket.Quantity;
 /**
+ * Clase de los productos que hacen parte de la canasta basica
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase de los productos que hacen parte de la canasta basica
+ * @date : 26/09/2020
  */
 
 public class Basket extends Product {

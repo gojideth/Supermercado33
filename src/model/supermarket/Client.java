@@ -1,14 +1,15 @@
 package model.supermarket;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 
 /**
+ * Clase que contiene la informacion del cliente
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase que contiene la informacion del cliente
+ * @date: 26/09/2020
  */
 public class Client extends Person{
     private Market market;
@@ -92,5 +93,24 @@ public class Client extends Person{
      */
     public Bill getBill() {
         return bill;
+    }
+
+    /**
+     * Metodo que genera factura
+     */
+    public void generateBill(){
+        System.out.println("             Supermercado la 33          ");
+        System.out.println(getName());
+        System.out.println(getId());
+        System.out.println(LocalDate.now() + " -- " +LocalTime.now());
+        System.out.println("Cantidad    Denominacion    nombre     precio  ");
+        for (int i=0; i<bill.getProducts().size(); i++){
+            Product temporal = bill.getProducts().get(i);
+            System.out.println(temporal.getAvailableQuantity().getAmount() + "    " + temporal.getAvailableQuantity().getProductDenomination() + "    "
+                + temporal.getName() + "     " + temporal.getPrice());
+        }
+        System.out.println("Total :                                " + bill.calculateTotal());
+        System.out.println("     Gracias por su compra vuelva pronto          ");
+
     }
 }

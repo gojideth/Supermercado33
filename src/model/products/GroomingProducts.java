@@ -4,11 +4,11 @@ import model.supermarket.Product;
 import model.supermarket.Quantity;
 
 /**
+ * Clase de los productos que son de aseo del hogar
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase de los productos que son de aseo del hogar
+ * @date: 26/09/2020
  */
 public class GroomingProducts extends Product {
     protected static final String INDENTIFIER = "Aseo";

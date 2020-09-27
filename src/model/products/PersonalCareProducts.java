@@ -4,11 +4,11 @@ import model.supermarket.Product;
 import model.supermarket.Quantity;
 
 /**
+ * Clase de los productos de cuidado y aseo personal
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase de los productos de cuidado y aseo personal
+ * @date: 26/09/2020
  */
 public class PersonalCareProducts extends Product {
 

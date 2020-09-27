@@ -1,11 +1,11 @@
 package model.supermarket;
 
 /**
+ * Clase producto que contiene la informacion de todos los productos que se venden en el supermercado
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase producto que contiene la informacion de todos los productos que se venden en el supermercado
+ * @date: 26/09/2020
  */
 public abstract class Product {
     public static final double IVA_PERCENTAGE = 0.19;

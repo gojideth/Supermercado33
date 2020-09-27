@@ -4,11 +4,11 @@ import model.supermarket.Product;
 import model.supermarket.Quantity;
 
 /**
+ * Clase de las bebidas alcoholicas
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase de las bebidas alcoholicas
+ * @date: 26/09/2020
  */
 public class Liquor extends Product {
     private double tax;

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 /**
+ * Clase Supermercadp que contiene los productos que se venden y los filtros a estos productos
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase Supermercadp que contiene los productos que se venden y los filtros a estos productos
+ * @date: 26/09/2020
  */
 public class Market {
     public List<Product> products;

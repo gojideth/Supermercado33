@@ -6,11 +6,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * Clase factura que almacena los productos comprados por el usuario
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase factura que almacena los productos comprados por el usuario
+ * @date: 26/09/2020
  */
 public class Bill {
     private LocalDate dateOfExpedition;
@@ -37,4 +37,15 @@ public class Bill {
         return products;
     }
 
+    /**
+     * Metodo que calcula el total que debe pagar la persona
+     * @return total a pagar
+     */
+    public double calculateTotal(){
+        double acum = 0;
+        for (int i=0; i<products.size(); i++){
+            acum += products.get(i).getPrice();
+        }
+        return acum;
+    }
 }
