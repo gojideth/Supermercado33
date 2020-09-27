@@ -65,12 +65,24 @@ public class TestMarket {
         }
     }
 
-//    public void addExpectedProducts(int numberExpected){
-//        int productsNumber = Integer.parseInt(scanner.nextLine());
-//        for (int i = 0; i < productsNumber; i++) {
-//            proof.add(test2());
-//        }
-//    }
+    public void addExpectedProducts(){
+        System.out.println("Ingrese valores eperados");
+        int productsNumber = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < productsNumber; i++) {
+            proof.add(test2());
+        }
+    }
+
+    public int isOk(){
+        int count = 0;
+        for (int i = 0; i < proof.size(); i++) {
+            if ( market.getFilters().contains(proof.get(i))){
+               count++;
+            }
+        }
+        //return (count == expected)? true : false;
+        return count;
+    }
 
     public Product test2() {
         Product product = null;
@@ -112,6 +124,11 @@ public class TestMarket {
             case 1:
                 System.out.println("Tipo: ");
                 market.filterType(scanner.nextLine());
+                addExpectedProducts();
+                System.out.println(isOk());
+                System.out.println(proof.size());
+                System.out.println(market.getFilters().get(0).equals(proof.get(0)));
+                //System.out.println(isOk() == Integer.parseInt(scanner.nextLine())? "ok" : "fail");
                 break;
             case 2:
                 System.out.println("Min Precio, max precio");
@@ -144,7 +161,7 @@ public class TestMarket {
             case 9:
                 return;
         }
-        market.showFilters();
+        //market.showFilters();
         testMenu();
     }
 
