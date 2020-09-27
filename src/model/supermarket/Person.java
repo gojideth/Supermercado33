@@ -1,5 +1,6 @@
 package model.supermarket;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -11,10 +12,10 @@ import java.util.Date;
  */
 public abstract class Person {
     private String name;
-    private Date dateBirth;
+    private LocalDate dateBirth;
     private String id;
 
-    public Person(String name, Date dateBirth, String id) {
+    public Person(String name, LocalDate dateBirth, String id) {
         this.name = name;
         this.dateBirth = dateBirth;
         this.id = id;
@@ -32,7 +33,7 @@ public abstract class Person {
      * Metodo que regresa la fecha de nacimiento de la persona
      * @return fecha de nacimiento de la persona
      */
-    public Date getDateBirth() {
+    public LocalDate getDateBirth() {
         return dateBirth;
     }
 

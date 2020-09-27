@@ -6,6 +6,7 @@ import model.supermarket.Charge;
 import model.supermarket.Client;
 import model.supermarket.Market;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -26,8 +27,8 @@ public class TestClient {
         int numberClients = Integer.parseInt(scanner.nextLine());
         clients = new Client[numberClients];
         for (int i = 0; i < numberClients; i++) {
-            String[] dates = scanner.nextLine().split(" ");
-            clients[i] = new Client(dates[0],new Date(Integer.parseInt(dates[1]),Integer.parseInt(dates[2]),Integer.parseInt(dates[3])), dates[4], Charge.valueOf(dates[5]), new Bill(new Date(Integer.parseInt(dates[6]),Integer.parseInt(dates[7]),Integer.parseInt(dates[8]))),new Market());
+            String[] dates = scanner.nextLine().split(" ");  //new Date(Integer.parseInt(dates[6]),Integer.parseInt(dates[7]),Integer.parseInt(dates[8]))
+            clients[i] = new Client(dates[0],LocalDate.of(Integer.parseInt(dates[1]),Integer.parseInt(dates[2]),Integer.parseInt(dates[3])), dates[4], Charge.valueOf(dates[5]), new Bill(LocalDate.now()),new Market());
         }
         testMenu();
     }

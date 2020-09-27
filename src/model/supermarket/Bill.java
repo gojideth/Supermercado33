@@ -1,5 +1,6 @@
 package model.supermarket;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,11 +13,11 @@ import java.util.List;
  * Clase factura que almacena los productos comprados por el usuario
  */
 public class Bill {
-    private Date dateOfExpedition;
+    private LocalDate dateOfExpedition;
     private List<Product> products;
 
-    public Bill() {
-        this.dateOfExpedition=dateOfExpedition;
+    public Bill(LocalDate date) {
+        this.dateOfExpedition=date;
         this.products=new ArrayList();
     }
 
@@ -24,7 +25,7 @@ public class Bill {
      * Metodo que arrjo la fecha de compra que se imprimira en la factura
      * @return fecha del dia actual
      */
-    public Date getDateOfExpedition() {
+    public LocalDate getDateOfExpedition() {
         return dateOfExpedition;
     }
 

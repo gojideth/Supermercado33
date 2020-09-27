@@ -136,16 +136,17 @@ public class Market {
         }
     }
 
-<<<<<<< HEAD
     /**
-     * Metodo que muestra lista de filtrados
+     * Metodo que retorna lista de filtros
+     * @return lista de filtrados
      */
-=======
     public List<Product> getFilters(){
         return filters;
     }
 
->>>>>>> e68a5876cd4e1ff4b69ed04100d1302bbe66e358
+    /**
+     * Metdo que imprime lista de filtrados
+     */
     public void showFilters(){
         for (int i=0; i<this.filters.size(); i++){
             System.out.println(filters.get(i).name);

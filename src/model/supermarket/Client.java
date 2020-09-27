@@ -1,5 +1,6 @@
 package model.supermarket;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -13,7 +14,7 @@ public class Client extends Person{
     private Market market;
     private Bill bill;
 
-    public Client(String name, Date dateBirth, String id, Bill bill, Market market) {
+    public Client(String name, LocalDate dateBirth, String id, Charge charge, Bill bill, Market market) {
         super(name, dateBirth, id);
         this.bill=bill;
         this.market = market;
