@@ -2,10 +2,11 @@ package model.supermarket;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Bill {
     private Date dateOfExpedition;
-    private ArrayList <Product> products;
+    private List<Product> products;
 
     public Bill(Date dateOfExpedition) {
         this.dateOfExpedition=dateOfExpedition;
@@ -16,7 +17,8 @@ public class Bill {
         return dateOfExpedition;
     }
 
-    public ArrayList<Product> getProducts() {
+    public List<Product> getProducts() {
         return products;
     }
+
 }

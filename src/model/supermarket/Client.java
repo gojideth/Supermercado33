@@ -1,6 +1,8 @@
 package model.supermarket;
 
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Client extends Person{
     private Charge charge;
@@ -10,6 +12,10 @@ public class Client extends Person{
         super(name, dateBirth, id);
         this.charge=charge;
         this.bill=bill;
+    }
+
+    public void productsToBuy(Product purchase){
+        bill.getProducts().add(purchase);
     }
 
     public Charge getCharge() {

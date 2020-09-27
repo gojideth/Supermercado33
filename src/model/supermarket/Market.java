@@ -71,7 +71,6 @@ public class Market {
         }
     }
 
-
     public void filterRangePrices(double minPrice, double maxPrice){
         filters.clear();
         for (int i = 0; i < products.size(); i++) {
@@ -81,5 +80,4 @@ public class Market {
             }
         }
     }
-
 }
