@@ -110,7 +110,7 @@ public class Administration {
         for (int i=0; i<products.size(); i++){
             for (int j=0; j<market.products.size(); j++){
                 if (products.get(i).getName().equals(market.products.get(j).getName())){
-                    market.products.get(j).getAvailableQuantity().setAmount(products.get(i).getAvailableQuantity().getAmount());
+                    market.products.get(j).getAvailableQuantity().addAmount(products.get(i).getAvailableQuantity().getAmount());
                     break;
                 }
             }

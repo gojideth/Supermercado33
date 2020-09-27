@@ -36,7 +36,7 @@ public class Quantity {
      * Metodo que permite agragar a la cantidad disponible una cantidad de productos que llegan por pedido
      * @param amount cantidad a agregarle al inventario
      */
-    public void setAmount(int amount) {
+    public void addAmount(int amount) {
         this.amount+=amount;
     }
 
@@ -48,5 +48,13 @@ public class Quantity {
         if (amount - quantity >= 0){
             this.amount -= quantity;
         }
+    }
+
+    /**
+     * Metodo que cambia el valor de la cantidad
+     * @param amount
+     */
+    public void setAmount(int amount) {
+        this.amount=amount;
     }
 }

@@ -21,6 +21,10 @@ public class Bill {
         this.products=new ArrayList();
     }
 
+    public Bill(List<Product> products){
+        this.products = products;
+    }
+
     /**
      * Metodo que arrjo la fecha de compra que se imprimira en la factura
      * @return fecha del dia actual
@@ -47,5 +51,9 @@ public class Bill {
             acum += products.get(i).getPrice();
         }
         return acum;
+    }
+
+    public void addProduct(Product product){
+        products.add(product);
     }
 }

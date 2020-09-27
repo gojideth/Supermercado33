@@ -70,4 +70,8 @@ public abstract class Product {
     public String getName() {
         return name;
     }
+
+    public String formatForBuy(){
+        return name + " precio: " + price + " cantidad disponible :" + getAvailableQuantity().getAmount() + getAvailableQuantity().getProductDenomination();
+    }
 }

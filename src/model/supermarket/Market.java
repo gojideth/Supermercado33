@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Market {
     public List<Product> products;
-    private List<Product> filters;
+    protected List<Product> filters;
 
     public Market() {
         products = new ArrayList<>();

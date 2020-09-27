@@ -3,6 +3,8 @@ package model.supermarket;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Clase que contiene la informacion del cliente
@@ -14,11 +16,17 @@ import java.util.Date;
 public class Client extends Person{
     private Market market;
     private Bill bill;
+    private List<Product> car;
 
     public Client(String name, LocalDate dateBirth, String id, Charge charge, Bill bill, Market market) {
         super(name, dateBirth, id);
         this.bill=bill;
         this.market = market;
+        this.car = new LinkedList();
+    }
+
+    public void getAllProducts(){
+        car = market.products;
     }
 
     /**
@@ -43,6 +51,7 @@ public class Client extends Person{
      */
     public void filterLowerPrice(double price){
         market.filterLowerPrice(price);
+        car = market.filters;
     }
 
     /**
@@ -51,6 +60,7 @@ public class Client extends Person{
      */
     public void filterMaxPrice(double maxPrice){
         market.filterMaxPrice(maxPrice);
+        car = market.filters;
     }
 
     /**
@@ -60,6 +70,7 @@ public class Client extends Person{
      */
     public void filterMaxPrice(double minPrice, String typeProduct){
         market.filterMaxPrice(minPrice,typeProduct);
+        car = market.filters;
     }
 
     /**
@@ -68,6 +79,7 @@ public class Client extends Person{
      */
     public void filterName(String nameProduct){
         market.filterName(nameProduct);
+        car = market.filters;
     }
 
     /**
@@ -77,6 +89,7 @@ public class Client extends Person{
      */
     public void filterRangePrices(double minPrice, double maxPrice){
         market.filterRangePrices(minPrice, maxPrice);
+        car = market.filters;
     }
 
     /**
@@ -95,6 +108,21 @@ public class Client extends Person{
         return bill;
     }
 
+    public void showcar(){
+        for (int i=0; i<car.size(); i++){
+            System.out.println((i+1) + ". " + car.get(i).formatForBuy());
+        }
+    }
+
+    public void buy(int index, int quantity){
+        if (index>=1 && index<=car.size()){
+            car.get(index-1).getAvailableQuantity().setAmount(quantity);
+            bill.getProducts().add(car.get(index-1));
+            car.remove(index-1);
+        }
+    }
+
+
     /**
      * Metodo que genera factura
      */
@@ -107,7 +135,7 @@ public class Client extends Person{
         for (int i=0; i<bill.getProducts().size(); i++){
             Product temporal = bill.getProducts().get(i);
             System.out.println(temporal.getAvailableQuantity().getAmount() + "    " + temporal.getAvailableQuantity().getProductDenomination() + "    "
-                + temporal.getName() + "     " + temporal.getPrice());
+                + temporal.getName() + "     " + temporal.getAvailableQuantity().getAmount() * temporal.getPrice());
         }
         System.out.println("Total :                                " + bill.calculateTotal());
         System.out.println("     Gracias por su compra vuelva pronto          ");
