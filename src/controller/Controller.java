@@ -12,8 +12,6 @@ public class Controller {
         this.ioManager = new IoManager();
     }
 
-    public void menu(){
 
-    }
 
 }

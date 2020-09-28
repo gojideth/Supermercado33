@@ -109,6 +109,25 @@ public  class IoManager{
     public String readStringGUI(String message) {
         return JOptionPane.showInputDialog(message);
     }
+
+    public int masterMenu(){
+        System.out.println("1. Menu usuario\n2. Menu administrador");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public int userMenu(){
+        System.out.println("1. filtrar\n2.Monstrar filtro\n3.comprar\4.generar factura");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public int filters(){
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public int adminMenu(){
+        System.out.println("1. Borrar agregar producto\n2. Borrar producto\n3. Revisar inventario\n4. Revisar costo pedido\n5. Realizar pedido");
+        return Integer.parseInt(input.nextLine());
+    }
 }
 
 

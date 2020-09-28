@@ -131,7 +131,7 @@ public class Client extends Person{
         System.out.println(getName());
         System.out.println(getId());
         System.out.println(LocalDate.now() + " -- " +LocalTime.now());
-        System.out.println("Cantidad    Denominacion    nombre     precio  ");
+        //System.out.println("Cantidad    Denominacion    nombre     precio  ");
         for (int i=0; i<bill.getProducts().size(); i++){
             Product temporal = bill.getProducts().get(i);
             System.out.println(temporal.getAvailableQuantity().getAmount() + "    " + temporal.getAvailableQuantity().getProductDenomination() + "    "

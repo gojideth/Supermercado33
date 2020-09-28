@@ -56,6 +56,24 @@ public class TestBill {
 
     public void buyClient(){
         client.getAllProducts();
+        System.out.println("Ingrese:\n1. para comprar\n2 Para generar su factura y pagar");
+        int option = Integer.parseInt(scanner.nextLine());
+        switch (option){
+            case 1:
+                client.showCar();
+                System.out.println("Ingrese el numero que corresponde al producto, el que se encuentra a la izquierda");
+                int index = Integer.parseInt(scanner.nextLine());
+                System.out.println("Ingrese la cantidad que desee llevar");
+                int quantity = Integer.parseInt(scanner.nextLine());
+                client.buy(index, quantity);
+                break;
+            case 2:
+                client.generateBill();
+                break;
+        }
+        if (option == 1)
+            buyClient();
+        /*client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));
         client.showCar();
         client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));
         client.showCar();
@@ -65,10 +83,7 @@ public class TestBill {
         client.showCar();
         client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));
         client.showCar();
-        client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));
-        client.showCar();
-        client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));
-        client.generateBill();
+        client.buy(Integer.parseInt(scanner.nextLine()), Integer.parseInt(scanner.nextLine()));*/
     }
 
     public static void main(String[] args) {

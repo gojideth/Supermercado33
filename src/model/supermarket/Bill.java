@@ -48,12 +48,8 @@ public class Bill {
     public double calculateTotal(){
         double acum = 0;
         for (int i=0; i<products.size(); i++){
-            acum += products.get(i).getPrice();
+            acum += products.get(i).getPrice() * products.get(i).getAvailableQuantity().getAmount();
         }
         return acum;
-    }
-
-    public void addProduct(Product product){
-        products.add(product);
     }
 }
