@@ -2,10 +2,7 @@ package model.test;
 
 import model.administration.Administration;
 import model.products.*;
-import model.supermarket.Denomination;
-import model.supermarket.Market;
-import model.supermarket.Product;
-import model.supermarket.Quantity;
+import model.supermarket.*;
 
 import java.util.LinkedList;
 import java.util.List;

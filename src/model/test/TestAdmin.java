@@ -37,6 +37,7 @@ public class TestAdmin {
         }
     }
 
+
     public void addExpectedProducts(){
         System.out.println("Ingrese valores esperados");
         int productsNumber = Integer.parseInt(scanner.nextLine());
@@ -89,13 +90,20 @@ public class TestAdmin {
         return count;
     }
 
+    public void showMarket(){
+        for (int i = 0; i < market.products.size(); i++) {
+            System.out.println(market.products.get(i).getName());
+        }
+    }
+
     public int sizeProof(){
         return proof.size();
     }
 
     public static void main(String[] args) {
         TestAdmin testAdmin = new TestAdmin();
-//        testAdmin.addProducts();
+       testAdmin.addProducts();
+       testAdmin.showMarket();
 //        testAdmin.addExpectedProducts();
 //        System.out.println(testAdmin.isOk() == testAdmin.sizeProof()? "ok" : "Fail");
     }

@@ -34,6 +34,7 @@ public class Client extends Person{
      */
     public void orderAlphabet(){
         market.orderAlphabet();
+        car = market.products;
     }
 
     /**
@@ -122,6 +123,9 @@ public class Client extends Person{
         }
     }
 
+    public List<Product> getCar() {
+        return car;
+    }
 
     /**
      * Metodo que genera factura

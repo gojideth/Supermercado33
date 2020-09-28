@@ -111,6 +111,7 @@ public class TestMarket {
             case 7:
                 System.out.println("Ordenar alfabeticamente");
                 market.orderAlphabet();
+                showMarket();
                 addExpectedProducts();
                 System.out.println(isOk() == Integer.parseInt(scanner.nextLine()));
                 break;
@@ -124,6 +125,16 @@ public class TestMarket {
                 return;
         }
         testMenu();
+    }
+
+    public void showMarket(){
+        for (int i = 0; i < market.products.size(); i++) {
+            System.out.println(market.products.get(i).getName());
+        }
+    }
+
+    public void sizeMarket(){
+        System.out.println(market.products.size());
     }
 
     public static void main(String[] args) {
