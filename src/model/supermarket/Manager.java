@@ -8,10 +8,13 @@ public class Manager {
     private Client client;
     private Market myMarket;
 
-    public Manager(Administration administrator, Client client, Market myMarket) {
-        this.administrator = administrator;
-        this.client = client;
-        this.myMarket = myMarket;
+    public Manager(Market myMarket) {
+        this.myMarket = new Market();
+        this.administrator = new Administration(myMarket);
+    }
+
+    public Administration getAdministrator() {
+        return administrator;
     }
 
     public void setClient(Client client){

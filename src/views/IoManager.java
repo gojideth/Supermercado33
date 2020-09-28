@@ -124,9 +124,24 @@ public  class IoManager{
         return Integer.parseInt(input.nextLine());
     }
 
-    public int adminMenu(){
-        System.out.println("1. Borrar agregar producto\n2. Borrar producto\n3. Revisar inventario\n4. Revisar costo pedido\n5. Realizar pedido");
+    public int chooseFilter(){
+        System.out.println("Filtrar por: \n 1. Tipo de producto \n 2. Rango de precio \n 3. Max precio y tipo \n 4. Max precio \n 5. Min precio y tipo \n 6. Min precio \n 7. Ordenar Nombre \n 8. Buscar por nombre ");
         return Integer.parseInt(input.nextLine());
+    }
+
+    public int adminMenu(){
+        System.out.println("1.Agregar producto\n2. Borrar producto\n3. Revisar inventario\n4. Revisar costo pedido\n5. Realizar pedido");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public String nameDeleteForAdmin(){
+        System.out.println("Ingrese el nombre del prodcuto que borrara");
+        return input.nextLine();
+    }
+
+    public String getTypeNewProduct(){
+        System.out.println("Ingrese de que tipo de producto agregara : canasta, licor, electrodomestico, aseo, personal, frutas");
+        return input.nextLine();
     }
 }
 
