@@ -17,6 +17,14 @@ public abstract class Product {
     private Provider provider;
     private Quantity availableQuantity;
 
+    /**
+     * Metodo constructor que recibe los parametros para crear la clase de Producto
+     * @param price Precio del producto
+     * @param name Nombre del producto
+     * @param quantityForSold Cantidad disponible para la venta
+     * @param priceOfProvider Precio de venta del proveedor
+     * @param quantity Cantidad de la presentacion
+     */
     public Product(double price, String name, int quantityForSold, double priceOfProvider, Quantity quantity) {
         this.price=price;
         this.name=name;
@@ -71,6 +79,10 @@ public abstract class Product {
         return name;
     }
 
+    /**
+     * Metodo que modifica la manera de mostrar los productos
+     * @return La cadena de texto
+     */
     public String formatForBuy(){
         return name + " precio: " + price + " cantidad disponible :" + getAvailableQuantity().getAmount() + getAvailableQuantity().getProductDenomination();
     }

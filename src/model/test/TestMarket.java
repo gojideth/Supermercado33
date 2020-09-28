@@ -22,6 +22,9 @@ public class TestMarket {
     private GetDataConsole getDataConsole;
     List<Product> proof;
 
+    /**
+     * Constructor que instancia los diferentes atributos de la clase
+     */
     public TestMarket() {
         scanner = new Scanner(System.in);
         market = new Market();
@@ -48,7 +51,7 @@ public class TestMarket {
 
     /**
      * Metodo encargado de comprobar si la lista de objetos filtrado y la de valores
-     * esperado coinciden
+     * esperado coincide
      * @return el numero de elementos que coinciden en la lista respecto la otra
      */
     public int isOk(){

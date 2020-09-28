@@ -8,19 +8,31 @@ import model.supermarket.Market;
 
 import java.time.LocalDate;
 import java.util.Scanner;
-
+/**
+ * @author Martin Santiago Chiquillo Castro
+ * @author Julian Alberto Ardila Arguello
+ * @author Andres Leonardo Amaya Vargas
+ * Date: 26/09/2020
+ * Clase que testea la clase Cliente
+ */
 public class TestClient {
     private Market market;
     private Administration admin;
     private Client client;
     private Scanner scanner;
 
+    /**
+     * Constructor que instancia los atributos de la clase
+     */
     public TestClient() {
         market = new Market();
         admin = new Administration(market);
         scanner = new Scanner(System.in);
     }
 
+    /**
+     * Metodo que agrega clientes
+     */
     public void addClients(){
         System.out.println("agregar datos de cliente ");
         String[] dates = scanner.nextLine().split(" ");
@@ -28,6 +40,9 @@ public class TestClient {
         testMenu();
     }
 
+    /**
+     * Metodo que muestra el menu para elegir la manera de probar los datos ingresados
+     */
     public void testMenu(){
         System.out.println("Filtrar por: \n 1. Tipo de producto \n 2. Rango de precio \n 3. Max precio y tipo \n 4. Max precio \n 5. Min precio y tipo \n 6. Min precio \n 7. Ordenar Nombre \n 8. Buscar por nombre ");
         int option = Integer.parseInt(scanner.nextLine());

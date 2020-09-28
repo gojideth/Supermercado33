@@ -18,6 +18,16 @@ public class Client extends Person{
     private Bill bill;
     private List<Product> car;
 
+    /**
+     * Constructor que crea un cliente heredando los atributos de la clase abstracta Persona
+     * @param name Nombre del cliente
+     * @param dateBirth Año de nacimiento
+     * @param id Identificacion del cliente
+     * @param charge Estado del cliente
+     * @param bill Factura del cliente
+     * @param market Mercado al cual esta comprando
+     */
+
     public Client(String name, LocalDate dateBirth, String id, Charge charge, Bill bill, Market market) {
         super(name, dateBirth, id);
         this.bill=bill;
@@ -108,12 +118,20 @@ public class Client extends Person{
         return bill;
     }
 
+    /**
+     * Metodo que muestra todo el carrito de compras del cliente
+     */
     public void showCar(){
         for (int i=0; i<car.size(); i++){
             System.out.println((i+1) + ". " + car.get(i).formatForBuy());
         }
     }
 
+    /**
+     * Metodo que genera la compra del cliente
+     * @param index Posicion del producto que se va a comprar
+     * @param quantity Cantidad de los productos
+     */
     public void buy(int index, int quantity){
         if (index>=1 && index<=car.size()){
             car.get(index-1).getAvailableQuantity().setAmount(quantity);
@@ -124,7 +142,7 @@ public class Client extends Person{
 
 
     /**
-     * Metodo que genera factura
+     * Metodo que genera factura para el cliente
      */
     public void generateBill(){
         System.out.println("            Supermercado la 33          ");

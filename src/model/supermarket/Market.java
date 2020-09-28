@@ -14,6 +14,9 @@ public class Market {
     public List<Product> products;
     protected List<Product> filters;
 
+    /**
+     * Constructor que instancia la lista de productos y filtros
+     */
     public Market() {
         products = new ArrayList<>();
         filters = new ArrayList<>();
