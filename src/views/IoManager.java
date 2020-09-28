@@ -1,5 +1,8 @@
 package views;
 
+import com.sun.scenario.effect.impl.sw.java.JSWColorAdjustPeer;
+import model.supermarket.Denomination;
+
 import javax.swing.*;
 import java.util.Scanner;
 
@@ -130,7 +133,7 @@ public  class IoManager{
     }
 
     public int adminMenu(){
-        System.out.println("1.Agregar producto\n2. Borrar producto\n3. Revisar inventario\n4. Revisar costo pedido\n5. Realizar pedido");
+        System.out.println("1.Agregar producto\n2. Borrar producto\n3. Revisar inventario\n4. Revisar costo pedido\n5. Realizar pedido\n6. regresar al menu anterior");
         return Integer.parseInt(input.nextLine());
     }
 
@@ -142,6 +145,53 @@ public  class IoManager{
     public String getTypeNewProduct(){
         System.out.println("Ingrese de que tipo de producto agregara : canasta, licor, electrodomestico, aseo, personal, frutas");
         return input.nextLine();
+    }
+
+    public String nameForProduct(){
+        System.out.println("Ingrese el nombre que le dara al nuevo producto : ");
+        return input.nextLine();
+    }
+
+    public double priceForProduct(){
+        System.out.println("Ingrese el precio para el producto :");
+        return Double.parseDouble(input.nextLine());
+    }
+
+    public int numberOfSold(){
+        System.out.println("Por cuantas unidades se vendera el producto");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public int getUnits(){
+        System.out.println("Ingrese cuanto habra disponible inicialmente en el inventario");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public Denomination generateDenomination(){
+        System.out.println("De que denominacion sera ese producto: gramos o unidades");
+        String denomination = input.nextLine().toUpperCase();
+        switch (denomination){
+            case "GRAMOS":
+                return Denomination.GRAMS;
+            case "UNIDADES":
+                return Denomination.UNITS;
+        }
+        return Denomination.UNITS;
+    }
+
+    public double priceOfProviderForProduct(){
+        System.out.println("Ingrese el precio al que se le comprara al proveedor");
+        return Double.parseDouble(input.nextLine());
+    }
+
+    public int mothsOfGaranty(){
+        System.out.println("Cuantos mese de garantia tendra el electrodomestico");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public int gradesForLiquor(){
+        System.out.println("Ingrese que procentaje de alcohol tiene");
+        return Integer.parseInt(input.nextLine());
     }
 }
 
