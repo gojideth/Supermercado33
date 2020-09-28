@@ -11,6 +11,14 @@ import model.supermarket.Quantity;
 
 public class Basket extends Product {
 
+    /**
+     * Constructor que crea una canasta de productos alimenticios
+     * @param price Precio de los productos
+     * @param name Nombre del producto
+     * @param quantityForSold Cantidad disponible de venta
+     * @param priceOfProvider Precio de los proveedores
+     * @param quantity Cantidad de la presentacion
+     */
     public Basket(double price, String name, int quantityForSold, double priceOfProvider, Quantity quantity) {
         super(price, name, quantityForSold, priceOfProvider, quantity);
     }

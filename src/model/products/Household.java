@@ -13,11 +13,23 @@ import model.supermarket.Quantity;
 public class Household extends Product {
     private int warranty;
 
+    /**
+     * Constructor que crea productos de tipo electrodomesticos
+     * @param price Precio de los productos
+     * @param name Nombre del producto
+     * @param quantityForSold Cantidad disponible de venta
+     * @param priceOfProvider Precio de los proveedores
+     * @param quantity Cantidad de la presentacion
+     */
     public Household(double price, String name, int quantityForSold, double priceOfProvider, Quantity quantity, int warranty) {
         super(price, name, quantityForSold, priceOfProvider, quantity);
         this.warranty=warranty;
     }
 
+    /**
+     * Metodo que retorna la garantia del producto
+     * @return Periodo de tiempo de garantia
+     */
     public int getWarranty() {
         return warranty;
     }

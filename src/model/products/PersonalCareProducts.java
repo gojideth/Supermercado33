@@ -11,7 +11,14 @@ import model.supermarket.Quantity;
  * @date: 26/09/2020
  */
 public class PersonalCareProducts extends Product {
-
+    /**
+     * Constructor que crea productos de tipo aseo personal
+     * @param price Precio de los productos
+     * @param name Nombre del producto
+     * @param quantityForSold Cantidad disponible de venta
+     * @param priceOfProvider Precio de los proveedores
+     * @param quantity Cantidad de la presentacion
+     */
     public PersonalCareProducts(double price, String name, int quantityForSold, double priceOfProvider, Quantity quantity) {
         super(price, name, quantityForSold, priceOfProvider, quantity);
     }

@@ -15,6 +15,12 @@ public abstract class Person {
     private LocalDate dateBirth;
     private String id;
 
+    /**
+     * Constructor plantea la creacion de una persona
+     * @param name Nombre de la persona
+     * @param dateBirth Año nacimiento
+     * @param id Identificacion
+     */
     public Person(String name, LocalDate dateBirth, String id) {
         this.name = name;
         this.dateBirth = dateBirth;
