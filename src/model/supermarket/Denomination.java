@@ -10,6 +10,5 @@ package model.supermarket;
 public enum Denomination {
     GRAMS("gramos"), UNITS("unidades");
 
-    Denomination(String denominacion) {
-    }askp´+
+    Denomination(String denominacion) { }
 }
