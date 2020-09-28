@@ -7,36 +7,53 @@ import model.supermarket.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * @author Martin Santiago Chiquillo Castro
+ * @author Julian Alberto Ardila Arguello
+ * @author Andres Leonardo Amaya Vargas
+ * Date: 26/09/2020
+ * Clase que permite interactuar con los datos de entrada
+ */
 public class GetDataConsole {
     private Administration admin;
     private Market market;
     private Scanner scanner;
     private List<Product> expectedProducts;
 
+    /**
+     * Constructor que instancia los diferentes atributos de la clase
+     */
     public GetDataConsole() {
         scanner = new Scanner(System.in);
         market = new Market();
         admin = new Administration(market);
         expectedProducts = new LinkedList<>();
     }
-
+    /**
+     * Metodo que agrega los productos a la lista del supermercado
+     */
     public void addProducts(){
         System.out.println("Ingrese numeros de Productos");
         int productsNumber = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < productsNumber; i++) {
-            admin.addProduct(test2());
+            admin.addProduct(test());
         }
     }
-
+    /**
+     * Metodo que comprueba una vez agregados los elementos que estos hayan sido efectivos
+     * en su implementación
+     */
     public void addExpectedProducts(){
         System.out.println("Ingrese valores esperados");
         int productsNumber = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < productsNumber; i++) {
-            expectedProducts.add(test2());
+            expectedProducts.add(test());
         }
     }
-
+    /**
+     * Metodo que comprueba si la cantidad esperada y agregada de productos es la misma
+     * @return Numero de elementos agregados correctamente
+     */
     public int isOk(){
         int count = 0;
         for (int i = 0; i < market.products.size(); i++) {
@@ -49,11 +66,19 @@ public class GetDataConsole {
         return count;
     }
 
+    /**
+     * Metodo que permite la entrada del tamaño que debe tener alguna lista
+     * @return El tamaño ingresado
+     */
     public int sizeExpected(){
         return Integer.parseInt(scanner.nextLine());
     }
 
-    public Product test2() {
+    /**
+     * Metodo que prueba si los productos son agregados eficientemente
+     * @return el producto agregado
+     */
+    public Product test() {
         Product product = null;
         try {
             String[] line = scanner.nextLine().split(" ");
@@ -85,15 +110,25 @@ public class GetDataConsole {
         return product;
     }
 
-
+    /**
+     * Metodo que muestra los filtros disponibles en el almacen
+     */
     public void showFilters(){
         market.showFilters();
     }
 
+    /**
+     * Metodo que retorna lista de filtros
+     * @return Lista con los filtros
+     */
     public List<Product> getFilters(){
         return market.getFilters();
     }
 
+    /**
+     * Metodo que retorna lista de productos esperados
+     * @return Lista con los productos
+     */
     public List<Product> getExpectedProducts() {
         return expectedProducts;
     }

@@ -7,7 +7,13 @@ import model.supermarket.*;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
-
+/**
+ * @author Martin Santiago Chiquillo Castro
+ * @author Julian Alberto Ardila Arguello
+ * @author Andres Leonardo Amaya Vargas
+ * Date: 26/09/2020
+ * Clase que testea la clase Cliente
+ */
 public class TestClient {
     private Market market;
     private Administration admin;
@@ -15,6 +21,9 @@ public class TestClient {
     private GetDataConsole getDataConsole;
     private Scanner scanner;
 
+    /**
+     * Constructor que instancia los atributos de la clase
+     */
     public TestClient() {
         market = new Market();
         admin = new Administration(market);
@@ -23,7 +32,11 @@ public class TestClient {
     }
 
     /**
+<<<<<<< HEAD
      * Metodo encargado de tomar los datos para la creacion de Usuarios
+=======
+     * Metodo que agrega clientes
+>>>>>>> 7532d502dedb5487cf340c4c17102599bf2c7143
      */
     public void addClients(){
         System.out.println("agregar datos de cliente ");
@@ -31,8 +44,9 @@ public class TestClient {
         client = new Client(dates[0], LocalDate.of(Integer.parseInt(dates[1]), Integer.parseInt(dates[2]), Integer.parseInt(dates[3])), dates[4], Charge.valueOf(dates[5]), new Bill(LocalDate.now()), market);
     }
 
+
     public void showMenuFiltres() {
-        System.out.println("Filtrar por: \n 1. Tipo de producto \n 2. Rango de precio \n 3. Max precio y tipo \n 4. Max precio \n 5. Min precio y tipo \n 6. Min precio \n 7. Ordenar Nombre \n 8. Buscar por nombre \n 9. salir ");
+        System.out.println("Filtrar por: \n 1. Tipo de producto \n 2. Rango de precio \n 3. Max precio y tipo \n 4. Max precio \n 5. Min precio y tipo \n 6. Min precio \n 7. Ordenar Nombre \n 8. Buscar por nombre ");
         int option = Integer.parseInt(scanner.nextLine());
         switch (option) {
             case 1:

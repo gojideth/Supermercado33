@@ -109,6 +109,68 @@ public  class IoManager{
     public String readStringGUI(String message) {
         return JOptionPane.showInputDialog(message);
     }
+
+    /**
+     * Metodo que permite elegir que menu se mostrara en caso de ser usuario o administrador
+     * @return Opcion elegida
+     */
+    public int masterMenu(){
+        System.out.println("1. Menu usuario\n2. Menu administrador");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    /**
+     * Metodo que muestra las opciones disponibles para el administrador
+     * @return Opcion elegida
+     */
+    public int userMenu(){
+        System.out.println("1. filtrar\n2.Monstrar filtro\n3.comprar\4.generar factura");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    /**
+     * Metodo que permite elegir algun tipo de filtro
+     * @return Opcion elegida
+     */
+    public int filters(){
+        return Integer.parseInt(input.nextLine());
+    }
+
+    /**
+     * Metodo que muestra un menu con todos los filtros disponibles
+     * @return La opcion elegida
+     */
+    public int chooseFilter(){
+        System.out.println("Filtrar por: \n 1. Tipo de producto \n 2. Rango de precio \n 3. Max precio y tipo \n 4. Max precio \n 5. Min precio y tipo \n 6. Min precio \n 7. Ordenar Nombre \n 8. Buscar por nombre ");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    /**
+     * Metodo que muestra el menu con las opciones disponibles del administrador
+     * @return Opcion elegida
+     */
+    public int adminMenu(){
+        System.out.println("1.Agregar producto\n2. Borrar producto\n3. Revisar inventario\n4. Revisar costo pedido\n5. Realizar pedido");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    /**
+     * Metodo que permire buscar y eliminar un producto para el administrador
+     * @return Nombre del producto que se quiere eliminar
+     */
+    public String nameDeleteForAdmin(){
+        System.out.println("Ingrese el nombre del prodcuto que borrara");
+        return input.nextLine();
+    }
+
+    /**
+     * Metodo que permite agregar un nuevo producto al inventario
+     * @return Nombre del producto que se quiere eliminar
+     */
+    public String getTypeNewProduct(){
+        System.out.println("Ingrese de que tipo de producto agregara : canasta, licor, electrodomestico, aseo, personal, frutas");
+        return input.nextLine();
+    }
 }
 
 

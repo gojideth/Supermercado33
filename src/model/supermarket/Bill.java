@@ -16,11 +16,19 @@ public class Bill {
     private LocalDate dateOfExpedition;
     private List<Product> products;
 
+    /**
+     * Constructor que crea un recibo con una fecha entrante e instancia la lista de productos
+     * @param date Fecha de la creacion del recibo
+     */
     public Bill(LocalDate date) {
         this.dateOfExpedition=date;
         this.products=new ArrayList();
     }
 
+    /**
+     * Constructor por default
+     * @param products Productos a ingresar
+     */
     public Bill(List<Product> products){
         this.products = products;
     }
@@ -48,12 +56,8 @@ public class Bill {
     public double calculateTotal(){
         double acum = 0;
         for (int i=0; i<products.size(); i++){
-            acum += products.get(i).getPrice();
+            acum += products.get(i).getPrice() * products.get(i).getAvailableQuantity().getAmount();
         }
         return acum;
-    }
-
-    public void addProduct(Product product){
-        products.add(product);
     }
 }

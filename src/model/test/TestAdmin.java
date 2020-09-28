@@ -4,7 +4,6 @@ import model.administration.Administration;
 import model.supermarket.*;
 import model.products.*;
 
-import javax.swing.plaf.IconUIResource;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -22,6 +21,9 @@ public class TestAdmin {
     private Market market;
     private List<Product> proof;
 
+    /**
+     * Metodo cosntructor por defecto
+     */
     public TestAdmin() {
         scanner = new Scanner(System.in);
         market = new Market();
@@ -29,24 +31,34 @@ public class TestAdmin {
         proof = new LinkedList<>();
     }
 
+    /**
+     * Metodo que agrega los productos a la lista del supermercado
+     */
     public void addProducts(){
         System.out.println("Ingrese numeros de Productos");
         int productsNumber = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < productsNumber; i++) {
-            admin.addProduct(test2());
+            admin.addProduct(test());
         }
     }
 
-
+    /**
+     * Metodo que comprueba una vez agregados los elementos que estos hayan sido efectivos
+     * en su implementación
+     */
     public void addExpectedProducts(){
         System.out.println("Ingrese valores esperados");
         int productsNumber = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < productsNumber; i++) {
-            proof.add(test2());
+            proof.add(test());
         }
     }
 
-    public Product test2() {
+    /**
+     * Metodo que prueba si los productos son agregados eficientemente
+     * @return el producto agregado
+     */
+    public Product test() {
         Product product = null;
         try {
             String[] line = scanner.nextLine().split(" ");
@@ -78,6 +90,10 @@ public class TestAdmin {
         return product;
     }
 
+    /**
+     * Metodo que comprueba si la cantidad esperada y agregada de productos es la misma
+     * @return Numero de elementos agregados correctamente
+     */
     public int isOk(){
         int count = 0;
         for (int i = 0; i < market.products.size(); i++) {
@@ -90,11 +106,18 @@ public class TestAdmin {
         return count;
     }
 
+
     public void showMarket(){
         for (int i = 0; i < market.products.size(); i++) {
             System.out.println(market.products.get(i).getName());
         }
     }
+
+
+    /**
+     * Metodo que brinda el tamaño esperado de la lista provisional
+     * @return Tamaño de la lista provisional de prueba
+     */
 
     public int sizeProof(){
         return proof.size();
