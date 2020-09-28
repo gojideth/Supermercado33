@@ -19,6 +19,7 @@ public class TestMarket {
     private Market market;
     private Administration administration;
     private Scanner scanner;
+    private GetDataConsole getDataConsole;
     List<Product> proof;
 
     public TestMarket() {
@@ -26,79 +27,56 @@ public class TestMarket {
         market = new Market();
         proof = new LinkedList<>();
         administration = new Administration(market);
+        getDataConsole = new GetDataConsole();
     }
 
+    /**
+     * Metodo encargado de recibir los Productos que seran agreados
+     * a la lista de productos en market
+     */
     public void addProducts(){
-        System.out.println("Ingrese numeros de Productos");
-        int productsNumber = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < productsNumber; i++) {
-            administration.addProduct(test2());
-        }
+        getDataConsole.addProducts();
     }
 
+    /**
+     * Metodo encargado de recibir los Productos que seran agreados
+     * a la lista de valores esperados
+     */
     public void addExpectedProducts(){
-        System.out.println("Ingrese valores esperados");
-        int productsNumber = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < productsNumber; i++) {
-            proof.add(test2());
-        }
+        getDataConsole.addExpectedProducts();
     }
 
+    /**
+     * Metodo encargado de comprobar si la lista de objetos filtrado y la de valores
+     * esperado coinciden
+     * @return el numero de elementos que coinciden en la lista respecto la otra
+     */
     public int isOk(){
-        int count = 0;
-        List<Product> temp = market.getFilters();
-        for (int i = 0; i < temp.size(); i++) {
-            for (int j = 0; j < proof.size(); j++) {
-                if (proof.get(i).getName().equals(temp.get(j).getName())){
-                    count++;
-                }
-            }
-        }
-        return count;
+        return getDataConsole.isOk();
     }
 
-    public Product test2() {
-        Product product = null;
-        try {
-            String[] line = scanner.nextLine().split(" ");
-            switch (line[0]) {
-                case "frutas":
-                    product = new EarthProducts(Double.parseDouble(line[1]), line[2], Integer.parseInt(line[3]), Double.parseDouble(line[4]), new Quantity(Integer.parseInt(line[5]), Denomination.valueOf(line[6])));
-                    break;
-                case "licor":
-                    product = new Liquor(Double.parseDouble(line[1]), line[2], Integer.parseInt(line[3]), Double.parseDouble(line[4]), new Quantity(Integer.parseInt(line[5]), Denomination.valueOf(line[6])), Double.parseDouble(line[7]), Integer.parseInt(line[8]));
-                    break;
-                case "aseo":
-                    product = new GroomingProducts(Integer.parseInt(line[1]), line[2], Integer.parseInt(line[3]), Double.parseDouble(line[4]), new Quantity(Integer.parseInt(line[5]), Denomination.valueOf(line[6])));
-                    break;
-                case "electrodomestico":
-                    product = new Household(Integer.parseInt(line[1]), line[2], Integer.parseInt(line[3]), Double.parseDouble(line[4]), new Quantity(Integer.parseInt(line[5]), Denomination.valueOf(line[6])), Integer.parseInt(line[7]));
-                    break;
-                case "personal":
-                    product = new PersonalCareProducts(Integer.parseInt(line[1]), line[2], Integer.parseInt(line[3]), Double.parseDouble(line[4]), new Quantity(Integer.parseInt(line[5]), Denomination.valueOf(line[6])));
-                    break;
-                case "canasta":
-                    product = new Basket(Double.parseDouble(line[1]), line[2], Integer.parseInt(line[3]), Double.parseDouble(line[4]), new Quantity(Integer.parseInt(line[5]), Denomination.valueOf(line[6])));
-                    break;
-                default:
-            }
-        }catch (NullPointerException e){
-            System.out.println("se ingreso un valor invalido");
-            throw e;
-        }
-        return product;
+    /**
+     * Metodo encargado de dar el tamaño esperado de la lista
+     * de resultados esperados
+     * @return
+     */
+    public int sizeExpected(){
+        return getDataConsole.sizeExpected();
     }
 
-
+    /**
+     * Metodo encargado de mostrar el menu y realizar los correspondientes
+     * llamados a los metodos solicitados
+     */
     public void testMenu(){
-        System.out.println("Filtrar por: \n 1. Tipo de producto \n 2. Rango de precio \n 3. Max precio y tipo \n 4. Max precio \n 5. Min precio y tipo \n 6. Min precio \n 7. Ordenar Nombre \n 8. Buscar por nombre ");
+        System.out.println("Filtrar por: \n 1. Tipo de producto \n 2. Rango de precio \n 3. Max precio y tipo \n 4. Max precio \n 5. Min precio y tipo \n 6. Min precio \n 7. Ordenar Nombre \n 8. Buscar por nombre \n 9. salir ");
         int option = Integer.parseInt(scanner.nextLine());
         switch (option){
             case 1:
                 System.out.println("Tipo: ");
                 market.filterType(scanner.nextLine());
                 addExpectedProducts();
-                System.out.println(isOk() == Integer.parseInt(scanner.nextLine()));
+                System.out.println((isOk() == sizeExpected())? "Ok" : "Fail");
                 break;
             case 2:
                 System.out.println("Min Precio, max precio");
@@ -145,7 +123,6 @@ public class TestMarket {
             case 9:
                 return;
         }
-        //market.showFilters();
         testMenu();
     }
 

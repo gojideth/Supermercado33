@@ -21,5 +21,4 @@ public class PersonalCareProducts extends Product {
         return "PERSONAL";
     }
 
-
 }

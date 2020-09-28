@@ -1,32 +1,27 @@
 package model.test;
 
 import model.administration.Administration;
-import model.supermarket.*;
 import model.products.*;
+import model.supermarket.Denomination;
+import model.supermarket.Market;
+import model.supermarket.Product;
+import model.supermarket.Quantity;
 
-import javax.swing.plaf.IconUIResource;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * @author Martin Santiago Chiquillo Castro
- * @author Julian Alberto Ardila Arguello
- * @author Andres Leonardo Amaya Vargas
- * Date: 26/09/2020
- * Clase que testea la clase Administration
- */
-public class TestAdmin {
-    private Scanner scanner;
+public class GetDataConsole {
     private Administration admin;
     private Market market;
-    private List<Product> proof;
+    private Scanner scanner;
+    private List<Product> expectedProducts;
 
-    public TestAdmin() {
+    public GetDataConsole() {
         scanner = new Scanner(System.in);
         market = new Market();
         admin = new Administration(market);
-        proof = new LinkedList<>();
+        expectedProducts = new LinkedList<>();
     }
 
     public void addProducts(){
@@ -41,8 +36,24 @@ public class TestAdmin {
         System.out.println("Ingrese valores esperados");
         int productsNumber = Integer.parseInt(scanner.nextLine());
         for (int i = 0; i < productsNumber; i++) {
-            proof.add(test2());
+            expectedProducts.add(test2());
         }
+    }
+
+    public int isOk(){
+        int count = 0;
+        for (int i = 0; i < market.products.size(); i++) {
+            for (int j = 0; j < expectedProducts.size(); j++) {
+                if (market.products.get(i).getName().equals(expectedProducts.get(j).getName())){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    public int sizeExpected(){
+        return Integer.parseInt(scanner.nextLine());
     }
 
     public Product test2() {
@@ -77,26 +88,23 @@ public class TestAdmin {
         return product;
     }
 
-    public int isOk(){
-        int count = 0;
-        for (int i = 0; i < market.products.size(); i++) {
-            for (int j = 0; j < proof.size(); j++) {
-                if (market.products.get(i).getName().equals(proof.get(j).getName())){
-                    count++;
-                }
-            }
-        }
-        return count;
+
+    public void showFilters(){
+        market.showFilters();
     }
 
-    public int sizeProof(){
-        return proof.size();
+    public List<Product> getFilters(){
+        return market.getFilters();
+    }
+
+    public List<Product> getExpectedProducts() {
+        return expectedProducts;
     }
 
     public static void main(String[] args) {
-        TestAdmin testAdmin = new TestAdmin();
-//        testAdmin.addProducts();
-//        testAdmin.addExpectedProducts();
-//        System.out.println(testAdmin.isOk() == testAdmin.sizeProof()? "ok" : "Fail");
+        GetDataConsole getDataConsole = new GetDataConsole();
+        getDataConsole.addProducts();
+        getDataConsole.addExpectedProducts();
+        System.out.println(getDataConsole.isOk());
     }
 }
