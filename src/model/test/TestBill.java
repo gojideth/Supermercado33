@@ -31,6 +31,7 @@ public class TestBill {
         }
     }
 
+    //wapoooo julian :3 
     /**
      * Metodo que prueba si los productos son agregados eficientemente
      * @return el producto agregado
