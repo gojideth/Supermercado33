@@ -31,13 +31,7 @@ public class TestClient {
         getDataConsole = new GetDataConsole();
     }
 
-    /**
-<<<<<<< HEAD
-     * Metodo encargado de tomar los datos para la creacion de Usuarios
-=======
-     * Metodo que agrega clientes
->>>>>>> 7532d502dedb5487cf340c4c17102599bf2c7143
-     */
+
     public void addClients(){
         System.out.println("agregar datos de cliente ");
         String[] dates = scanner.nextLine().split(" ");
@@ -50,40 +44,43 @@ public class TestClient {
         switch (option) {
             case 1:
                 System.out.println("Tipo: ");
-                client.filterName(scanner.nextLine());
+                client.filterType(scanner.nextLine());
+                market.showFilters();
                 break;
             case 2:
                 System.out.println("Min Precio, max precio");
                 client.filterRangePrices(Double.parseDouble(scanner.nextLine()), Double.parseDouble(scanner.nextLine()));
-                client.showCar();
-                System.out.println(client.getCar().size());
+                market.showFilters();
                 break;
             case 3:
                 System.out.println("Ingrese precio Minimo a pagar y tipo ");
                 client.filterMaxPrice(Double.parseDouble(scanner.nextLine()), scanner.nextLine());
+                market.showFilters();
                 break;
             case 4:
                 System.out.println("Ingrese precio Minimo a pagar");
                 client.filterMaxPrice(Double.parseDouble(scanner.nextLine()));
+                market.showFilters();
                 break;
             case 5:
                 System.out.println("Ingrese precio Maximo a pagar y tipo ");
                 client.filterLowerPrice(Double.parseDouble(scanner.nextLine()), scanner.nextLine());
+                market.showFilters();
                 break;
             case 6:
                 System.out.println("Ingrese precio Maximo a pagar");
                 client.filterLowerPrice(Double.parseDouble(scanner.nextLine()));
+                market.showFilters();
                 break;
             case 7:
                 showMarket();
                 System.out.println("Ordenar alfabeticamente");
-                client.orderAlphabet();
-                showMarket();
-                System.out.println(client.getCar().size());
+                market.showFilters();
                 break;
             case 8:
                 System.out.println("Ingrese nombre");
                 client.filterName(scanner.nextLine());
+                market.showFilters();
                 break;
             case 9:
                 return;
