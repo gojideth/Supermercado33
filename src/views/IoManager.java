@@ -20,89 +20,6 @@ public  class IoManager{
     }
 
     /**
-     * Método que recibe una cadena de texto y la muestra
-     * @param message El texto a mostrar
-     */
-    public void showMessage(String message) {
-        System.out.print(message);
-    }
-
-    /**
-     * Método que recibe un mensaje y lo muestra gráficamente
-     * @param message Mensaje que se quiere mostrar
-     */
-    public void showMessageGUI(String message) {
-        JOptionPane.showMessageDialog(null, message);
-    }
-
-    /**
-     * Método que muestra un mensaje y lee un short
-     * @param message Mensaje que se quiere mostrar
-     * @return El número ingresado
-     */
-    public short readShort(String message) {
-        this.showMessage(message);
-        return input.nextShort();
-    }
-
-    /**
-     * Método que muestra un mensaje y lee un short gráficamente
-     * @param message Mensaje que se quiere mostrar
-     * @return El número ingresado
-     */
-    public short readShortGUI(String message) {
-        return Short.parseShort( JOptionPane.showInputDialog(message));
-    }
-
-    /**
-     * Método que muestra un mensaje y lee un double
-     * @param message Mensaje que se quiere mostrar
-     * @return El número ingresado
-     */
-    public double readDouble(String message) {
-        this.showMessage(message);
-        return input.nextDouble();
-    }
-
-    /**
-     *
-     * Método que muestra un mensaje y lee un double gráficamente
-     * @param message Mensaje que se quiere mostrar
-     * @return El número ingresado
-     */
-    public double readDoubleGUI(String message) {
-        return Double.parseDouble(JOptionPane.showInputDialog(message));
-    }
-
-    /**
-     * Método que muestra un mensaje y lee un entero
-     * @param message Mensaje que se quiere mostrar
-     * @return El número ingresado
-     */
-    public int readIntegerGUI(String message) {
-        return Integer.parseInt(JOptionPane.showInputDialog(message));
-    }
-
-    /**
-     * Método que muestra un mensaje y lee texto
-     * @param message Mensaje que se quiere mostrar
-     * @return El texto ingresado
-     */
-    public String readString(String message) {
-        this.showMessage(message);
-        return input.next();
-    }
-
-    /**
-     * Método que muestra un mensaje y lee texto gráficamente
-     * @param message Mensaje que se quiere mostrar
-     * @return El texto ingresado
-     */
-    public String readStringGUI(String message) {
-        return JOptionPane.showInputDialog(message);
-    }
-
-    /**
      * Metodo que permite elegir que menu se mostrara en caso de ser usuario o administrador
      * @return Opcion elegida
      */
@@ -155,26 +72,46 @@ public  class IoManager{
         return input.nextLine();
     }
 
+    /**
+     * Metodo que pide el nombre apra agregar un nuevo producto
+     * @return nombre del nuevo producto que se agregara
+     */
     public String nameForProduct(){
         System.out.println("Ingrese el nombre que le dara al nuevo producto : ");
         return input.nextLine();
     }
 
+    /**
+     * Metodo que pide el precio que se asiganra al producto
+     * @return precio del nuevo producto
+     */
     public double priceForProduct(){
         System.out.println("Ingrese el precio para el producto :");
         return Double.parseDouble(input.nextLine());
     }
 
+    /**
+     * Metodo que pide por cuantas unidades se vendera el nuevo producto
+     * @return cantidad por la que se vendera el producto
+     */
     public int numberOfSold(){
         System.out.println("Por cuantas unidades se vendera el producto");
         return Integer.parseInt(input.nextLine());
     }
 
+    /**
+     * Metodo que pide cuantas unidades tendra en principo el producto
+     * @return
+     */
     public int getUnits(){
         System.out.println("Ingrese cuanto habra disponible inicialmente en el inventario");
         return Integer.parseInt(input.nextLine());
     }
 
+    /**
+     * Metodo que regresa la denominacion por la que se deseen vender los productos
+     * @return denominacion del producto a ingresar
+     */
     public Denomination generateDenomination(){
         System.out.println("De que denominacion sera ese producto: gramos o unidades");
         String denomination = input.nextLine().toUpperCase();
@@ -187,76 +124,136 @@ public  class IoManager{
         return Denomination.UNITS;
     }
 
+    /**
+     * Metodo que pide a que precio se le comprara el producto
+     * @return precio al que s ecomprara el producto
+     */
     public double priceOfProviderForProduct(){
         System.out.println("Ingrese el precio al que se le comprara al proveedor");
         return Double.parseDouble(input.nextLine());
     }
 
+    /**
+     * Metodo que pide los meses de garantia para electrodomesticos
+     * @return numer de meses de garantia
+     */
     public int mothsOfGaranty(){
         System.out.println("Cuantos mese de garantia tendra el electrodomestico");
         return Integer.parseInt(input.nextLine());
     }
 
+    /**
+     * Metodo que pide el grado de alcohol par los licores
+     * @return grados del alcohol de los licores
+     */
     public int gradesForLiquor(){
         System.out.println("Ingrese que procentaje de alcohol tiene");
         return Integer.parseInt(input.nextLine());
     }
 
+    /**
+     * Metodo que pide el nombre del usuario al loguearse
+     * @return nombre del usuario
+     */
     public String nameUser(){
         System.out.println("Ingrese su nombre");
         return input.nextLine();
     }
 
+    /**
+     * Metodo que pide el id del usuario al loguearse
+     * @return id de la persona
+     */
     public String idUser(){
         System.out.println("Ingrese su documneto");
         return input.nextLine();
     }
 
+    /**
+     * Metodo que pide el año en el que nacio del usuario al loguearse
+     * @return año en el que nacio el usuario
+     */
     public int yearUser(){
         System.out.println("Ingrese el año en el que nacio :");
         return Integer.parseInt(input.nextLine());
     }
 
+    /**
+     * Metodo que pide el mes del año en el que nacio usuario al loguearse
+     * @return mes del año en el que nacio el usuario
+     */
     public int monthForYear(){
         System.out.println("Ingrese el numero del mes en el que nacio");
         return Integer.parseInt(input.nextLine());
     }
 
+    /**
+     * Metodo que pide el dia del año en el que nacio el usuario al loguearse
+     * @return
+     */
     public int dayOfyear(){
         System.out.println("Ingrese el dia el mes en el que nacio");
         return Integer.parseInt(input.nextLine());
     }
 
+    /**
+     * Metodo que pide el impuesto al licor
+     * @return imnpuesto al licor
+     */
     public double taxForLiquiour(){
         System.out.println("Ingrese el procentaje de imuesto al licor");
         return Double.parseDouble(input.nextLine());
     }
 
+    /**
+     * Metodo que pide al usuario el indice del producto que desee comprar
+     * @return indice en una lista que le aparecera en pantalla
+     */
     public int getIndexOfProduct(){
         System.out.println("Ingrese el numero del producto que desea agregar, los que se encuentran a la izquierda de cada producto");
         return Integer.parseInt(input.nextLine());
     }
 
+    /**
+     * Metodo que pide al usuaro la cantidad que comprara de cada producto respecto a su denominacion
+     * @return cantidad que el usuario comprara
+     */
     public int getQuantityForBuy(){
         System.out.println("Ingrese la cantidad de gramos o unidades que comprara, tengo en cuenta la cantidad disponible que aparece a la derecha");
         return Integer.parseInt(input.nextLine());
     }
 
+    /**
+     * Metodo que pide un nombre al usuario que le permitira filtrar
+     * @return nombre para filtar
+     */
     public String nameForFilter(){
         System.out.println("Ingrese nombre del producto por el que desee filtrar");
         return input.nextLine();
     }
 
+    /**
+     * Metodo que pide al usuario un precio de referencia maximo que desee pagar
+     * @return precio maximo que desee pagar
+     */
     public double maxPrice(){
         System.out.println("Ingrese el valor maximo que desee pagar");
         return Double.parseDouble(input.nextLine());
     }
 
+    /**
+     * Metodo que pide al usuario un precio de referencia minimo que desee pagar
+     * @return precio minimo que desee pagar
+     */
     public double minPrice(){
         System.out.println("Ingrese el valor minimo que desee pagar");
         return Double.parseDouble(input.nextLine());
     }
 
+    /**
+     * Metodo que regresa los tipos de producto para filtrar
+     * @return tipos de producto
+     */
     public String typeForFilter(){
         System.out.println("Porque tipo de prodcuto desea filtrar :");
         System.out.println(" 1. canasta(comida)\n 2. Licores \n 3. Aseo para hogar\n 4. Aseo personal \n 5. Electrodomesticos \n 6. Productos del agro");
@@ -288,6 +285,10 @@ public  class IoManager{
         return election;
     }
 
+    /**
+     * Metodo que imprime el menu de opciones de compra
+     * @return entero con la eleccion de usuario
+     */
     public int buyMenu(){
         System.out.println("Desea comprar algo:\n 1.Comprar un producto\n 2.Filtrar por otro producto \n 3. generar factura y salir");
         return Integer.parseInt(input.nextLine());

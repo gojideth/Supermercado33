@@ -14,16 +14,16 @@ public class TestMarkettwo {
         this.administration=new Administration(market);
     }
 
-    public void addtr(){
-        administration.addProduct(new PersonalCareProducts(8, "persona1", 1, 455, new Quantity(20, Denomination.GRAMS)));
-        administration.addProduct(new PersonalCareProducts(10, "persona2", 1, 455, new Quantity(20, Denomination.GRAMS)));
-        administration.addProduct(new PersonalCareProducts(12, "persona3", 1, 455, new Quantity(20, Denomination.GRAMS)));
-        administration.addProduct(new PersonalCareProducts(14, "persona4", 1, 455, new Quantity(20, Denomination.GRAMS)));
-        administration.addProduct(new PersonalCareProducts(20, "sable", 1, 455, new Quantity(20, Denomination.GRAMS)));
-        administration.addProduct(new Liquor(211,"rrr", 6,4,new Quantity(5, Denomination.GRAMS), 5,5));
+    public void add(){
+        administration.addProduct(new PersonalCareProducts(8, "Esponjilla", 1, 455, new Quantity(20, Denomination.GRAMS)));
+        administration.addProduct(new PersonalCareProducts(10, "jabon", 1, 455, new Quantity(20, Denomination.GRAMS)));
+        administration.addProduct(new PersonalCareProducts(12, "cloro", 1, 455, new Quantity(20, Denomination.GRAMS)));
+        administration.addProduct(new PersonalCareProducts(14, "fabuloso", 1, 455, new Quantity(20, Denomination.GRAMS)));
+        administration.addProduct(new PersonalCareProducts(20, "jabon de ropa", 1, 455, new Quantity(20, Denomination.GRAMS)));
+        administration.addProduct(new Liquor(211,"Aguardiente", 6,4,new Quantity(5, Denomination.GRAMS), 5,5));
     }
 
-    public void cdd(){
+    public void filter(){
         Client client = new Client("ho", LocalDate.of(2000,2,2), "464646", Charge.USER, new Bill(LocalDate.now()), this.market);
         client.filterRangePrices(10,12);
         for (int i=0; i<market.getFilters().size(); i++){
@@ -37,7 +37,7 @@ public class TestMarkettwo {
 
     public static void main(String[] args) {
         TestMarkettwo testMarkettwo = new TestMarkettwo();
-        testMarkettwo.addtr();
-        testMarkettwo.cdd();
+        testMarkettwo.add();
+        testMarkettwo.filter();
     }
 }

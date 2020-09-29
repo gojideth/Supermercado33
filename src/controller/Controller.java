@@ -16,6 +16,9 @@ public class Controller {
         this.ioManager = new IoManager();
     }
 
+    /**
+     * Metodo que imprime el menu principal de toda la app
+     */
     public void masterMenu(){
         System.out.println("Supermercado la 33");
         int option = ioManager.masterMenu();
@@ -31,6 +34,9 @@ public class Controller {
         }
     }
 
+    /**
+     * Metodo que imprime el menu del administrador
+     */
     public void adminMenu(){
        int option = ioManager.adminMenu();
        switch (option){
@@ -86,7 +92,9 @@ public class Controller {
        adminMenu();
     }
 
-
+    /**
+     * Metodo que imprime el menu del cliente
+     */
     public void clientMenu(){
         if (manager.getClient() != null){
             int option = ioManager.chooseFilter();
