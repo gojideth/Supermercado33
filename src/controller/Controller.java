@@ -1,5 +1,6 @@
 package controller;
 
+import model.administration.*;
 import model.products.*;
 import model.supermarket.*;
 import views.IoManager;
@@ -111,6 +112,7 @@ public class Controller {
                     break;
                 case 7:
                     manager.getClient().getAllProducts();
+                    break;
                 case 8:
                     manager.getClient().filterName(ioManager.nameForProduct());
                     break;
@@ -118,9 +120,9 @@ public class Controller {
                     manager.getClient().getAllProducts();
                     break;
             }
-            int choose = ioManager.buyMenu();
             System.out.println(manager.getClient().getCar().size());
             manager.getClient().showCar();
+            int choose = ioManager.buyMenu();
             switch (choose){
                 case 1:
                     manager.getClient().buy(ioManager.getIndexOfProduct(), ioManager.getQuantityForBuy());
@@ -153,6 +155,15 @@ public class Controller {
 
     public static void main(String[] args) {
         Market supermercado33 = new Market();
+        Administration administration = new Administration(supermercado33);
+        administration.addProduct(new PersonalCareProducts(8, "persona1", 1, 455, new Quantity(20, Denomination.GRAMS)));
+        administration.addProduct(new PersonalCareProducts(10, "persona2", 1, 455, new Quantity(20, Denomination.GRAMS)));
+        administration.addProduct(new PersonalCareProducts(12, "persona3", 1, 455, new Quantity(20, Denomination.GRAMS)));
+        administration.addProduct(new PersonalCareProducts(14, "persona4", 1, 455, new Quantity(20, Denomination.GRAMS)));
+        administration.addProduct(new PersonalCareProducts(20, "sable", 1, 455, new Quantity(20, Denomination.GRAMS)));
+        administration.addProduct(new Liquor(211,"rrr", 6,4,new Quantity(5, Denomination.GRAMS), 5,5));
+        administration.addProduct(new EarthProducts(5,"FF:3", 2, 5, new Quantity(7, Denomination.GRAMS)));
+        administration.addProduct(new Basket(766, "gala", 2, 21, new Quantity(4, Denomination.UNITS)));
         Manager manager = new Manager(supermercado33);
         new Controller(manager).masterMenu();
     }

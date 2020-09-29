@@ -49,7 +49,7 @@ public class Client extends Person{
 
     public void filterType(String type){
         market.filterType(type);
-        car = market.products;
+        car = market.filters;
     }
 
     /**
