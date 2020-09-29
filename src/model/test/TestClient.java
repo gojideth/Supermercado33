@@ -43,8 +43,7 @@ public class TestClient {
         String[] dates = scanner.nextLine().split(" ");
         client = new Client(dates[0], LocalDate.of(Integer.parseInt(dates[1]), Integer.parseInt(dates[2]), Integer.parseInt(dates[3])), dates[4], Charge.valueOf(dates[5]), new Bill(LocalDate.now()), market);
     }
-
-
+    
     public void showMenuFiltres() {
         System.out.println("Filtrar por: \n 1. Tipo de producto \n 2. Rango de precio \n 3. Max precio y tipo \n 4. Max precio \n 5. Min precio y tipo \n 6. Min precio \n 7. Ordenar Nombre \n 8. Buscar por nombre ");
         int option = Integer.parseInt(scanner.nextLine());
@@ -52,7 +51,6 @@ public class TestClient {
             case 1:
                 System.out.println("Tipo: ");
                 client.filterName(scanner.nextLine());
-                System.out.println("entro");
                 break;
             case 2:
                 System.out.println("Min Precio, max precio");
