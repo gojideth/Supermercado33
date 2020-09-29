@@ -1,13 +1,20 @@
 package views;
 
 import com.sun.org.apache.regexp.internal.RE;
-import com.sun.scenario.effect.impl.sw.java.JSWColorAdjustPeer;
+
 import model.supermarket.Denomination;
 
 import javax.swing.*;
 import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 
+/**
+ * @author Martin Santiago Chiquillo Castro
+ * @author Julian Alberto Ardila Arguello
+ * @author Andres Leonardo Amaya Vargas
+ * Date: 26/09/2020
+ * Clase que permite la entrada de datos
+ */
 public  class IoManager{
 
     private Scanner input;
@@ -101,7 +108,7 @@ public  class IoManager{
 
     /**
      * Metodo que pide cuantas unidades tendra en principo el producto
-     * @return
+     * @return cantidad unidadex
      */
     public int getUnits(){
         System.out.println("Ingrese cuanto habra disponible inicialmente en el inventario");
@@ -189,7 +196,7 @@ public  class IoManager{
 
     /**
      * Metodo que pide el dia del año en el que nacio el usuario al loguearse
-     * @return
+     * @return dia del año
      */
     public int dayOfyear(){
         System.out.println("Ingrese el dia el mes en el que nacio");

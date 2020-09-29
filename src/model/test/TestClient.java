@@ -32,11 +32,8 @@ public class TestClient {
     }
 
     /**
-<<<<<<< HEAD
      * Metodo encargado de tomar los datos para la creacion de Usuarios
-=======
      * Metodo que agrega clientes
->>>>>>> 7532d502dedb5487cf340c4c17102599bf2c7143
      */
     public void addClients(){
         System.out.println("agregar datos de cliente ");

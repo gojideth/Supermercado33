@@ -8,7 +8,7 @@ import model.supermarket.Quantity;
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * @date: 26/09/2020
+ * Date: 26/09/2020
  */
 public class Household extends Product {
     private int warranty;
@@ -20,6 +20,7 @@ public class Household extends Product {
      * @param quantityForSold Cantidad disponible de venta
      * @param priceOfProvider Precio de los proveedores
      * @param quantity Cantidad de la presentacion
+     * @param warranty Garantia
      */
     public Household(double price, String name, int quantityForSold, double priceOfProvider, Quantity quantity, int warranty) {
         super(price, name, quantityForSold, priceOfProvider, quantity);
