@@ -5,7 +5,7 @@ package model.supermarket;
  * @author Martin Santiago Chuquillo Castro
  * @author Julian Alberto Ardila Arguelo
  * @author Andres Leonardo Amaya Vargas
- * @date : 26/09/2020
+ * Date : 26/09/2020
  */
 public enum Charge {
     USER("Usuario"), Administrative("Administrador");

@@ -5,7 +5,7 @@ package model.supermarket;
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * @date: 26/09/2020
+ * Date: 26/09/2020
  */
 public class Quantity {
     private int amount;
@@ -52,7 +52,7 @@ public class Quantity {
 
     /**
      * Metodo que cambia el valor de la cantidad
-     * @param amount
+     * @param amount cantidad a setear
      */
     public void setAmount(int amount) {
         this.amount=amount;

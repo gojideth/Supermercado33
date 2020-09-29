@@ -8,7 +8,7 @@ import model.supermarket.Quantity;
  * @author Martin Santiago Chiquillo Castro
  * @author Julian Alberto Ardila Arguello
  * @author Andres Leonardo Amaya Vargas
- * @date: 26/09/2020
+ * Date: 26/09/2020
  */
 public class Liquor extends Product {
     private int alcoholAmount;
@@ -22,6 +22,7 @@ public class Liquor extends Product {
      * @param priceOfProvider Precio de los proveedores
      * @param quantity Cantidad de la presentacion
      * @param alcoholAmount Porcentaje de alcohol
+     * @param tax Impuesto
      */
     public Liquor(double price, String name, int quantityForSold, double priceOfProvider, Quantity quantity, double tax ,int alcoholAmount) {
         super(price, name, quantityForSold, priceOfProvider, quantity);

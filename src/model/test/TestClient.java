@@ -31,7 +31,14 @@ public class TestClient {
         getDataConsole = new GetDataConsole();
     }
 
+<<<<<<< HEAD
 
+=======
+    /**
+     * Metodo encargado de tomar los datos para la creacion de Usuarios
+     * Metodo que agrega clientes
+     */
+>>>>>>> 1a9f208929daceb88e1ecea69a6c525d102bf93d
     public void addClients(){
         System.out.println("agregar datos de cliente ");
         String[] dates = scanner.nextLine().split(" ");

@@ -61,7 +61,7 @@ public class TestMarket {
     /**
      * Metodo encargado de dar el tamaño esperado de la lista
      * de resultados esperados
-     * @return
+     * @return tamaño esperado
      */
     public int sizeExpected(){
         return getDataConsole.sizeExpected();
