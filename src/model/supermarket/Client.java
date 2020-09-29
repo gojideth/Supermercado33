@@ -47,6 +47,11 @@ public class Client extends Person{
         car = market.products;
     }
 
+    public void filterType(String type){
+        market.filterType(type);
+        car = market.products;
+    }
+
     /**
      * Metodo que permite al usuario filtrar la lista de productos por un tipo de producto y por un precio maximo
      * @param price precio maximo de productos a buscar

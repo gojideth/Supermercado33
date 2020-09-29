@@ -22,6 +22,19 @@ public class Manager {
     public Manager(Market myMarket) {
         this.myMarket = new Market();
         this.administrator = new Administration(myMarket);
+        this.client = null;
+    }
+
+    /**
+     * Metodo que permite acceder al cliente
+     * @return cliente
+     */
+    public Client getClient() {
+        return client;
+    }
+
+    public void deleteClient(){
+        this.client = null;
     }
 
     /**
@@ -38,5 +51,9 @@ public class Manager {
      */
     public void setClient(Client client){
         this.client = client;
+    }
+
+    public Market getMyMarket() {
+        return myMarket;
     }
 }

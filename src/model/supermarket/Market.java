@@ -53,7 +53,7 @@ public class Market {
     public void filterType(String type){
         filters.clear();
         for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getIndentifier().contains(type.toUpperCase())){
+            if (products.get(i).getIndentifier().equalsIgnoreCase(type.toUpperCase())){
                 filters.add(products.get(i));
             }
         }

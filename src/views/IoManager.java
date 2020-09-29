@@ -1,9 +1,11 @@
 package views;
 
+import com.sun.org.apache.regexp.internal.RE;
 import com.sun.scenario.effect.impl.sw.java.JSWColorAdjustPeer;
 import model.supermarket.Denomination;
 
 import javax.swing.*;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.Scanner;
 
 public  class IoManager{
@@ -123,15 +125,6 @@ public  class IoManager{
     }
 
     /**
-     * Metodo que muestra las opciones disponibles para el administrador
-     * @return Opcion elegida
-     */
-    public int userMenu(){
-        System.out.println("1. filtrar\n2.Monstrar filtro\n3.comprar\4.generar factura");
-        return Integer.parseInt(input.nextLine());
-    }
-
-    /**
      * Metodo que permite elegir algun tipo de filtro
      * @return Opcion elegida
      */
@@ -219,6 +212,97 @@ public  class IoManager{
 
     public int gradesForLiquor(){
         System.out.println("Ingrese que procentaje de alcohol tiene");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public String nameUser(){
+        System.out.println("Ingrese su nombre");
+        return input.nextLine();
+    }
+
+    public String idUser(){
+        System.out.println("Ingrese su documneto");
+        return input.nextLine();
+    }
+
+    public int yearUser(){
+        System.out.println("Ingrese el año en el que nacio :");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public int monthForYear(){
+        System.out.println("Ingrese el numero del mes en el que nacio");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public int dayOfyear(){
+        System.out.println("Ingrese el dia el mes en el que nacio");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public double taxForLiquiour(){
+        System.out.println("Ingrese el procentaje de imuesto al licor");
+        return Double.parseDouble(input.nextLine());
+    }
+
+    public int getIndexOfProduct(){
+        System.out.println("Ingrese el numero del producto que desea agregar, los que se encuentran a la izquierda de cada producto");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public int getQuantityForBuy(){
+        System.out.println("Ingrese la cantidad de gramos o unidades que comprara, tengo en cuenta la cantidad disponible que aparece a su izquierda");
+        return Integer.parseInt(input.nextLine());
+    }
+
+    public String nameForFilter(){
+        System.out.println("Ingrese nombre del producto por el que desee filtrar");
+        return input.nextLine();
+    }
+
+    public double maxPrice(){
+        System.out.println("Ingrese el valor maximo que desee pagar");
+        return Double.parseDouble(input.nextLine());
+    }
+
+    public double minPrice(){
+        System.out.println("Ingrese el valor minimo que desee pagar");
+        return Double.parseDouble(input.nextLine());
+    }
+
+    public String typeForFilter(){
+        System.out.println("Porque tipo de prodcuto desea filtrar :");
+        System.out.println(" 1. canasta(comida)\n 2. Licores \n. 3. Aseo para hogar\n 4. Aseo personal \n 5. Electrodomesticos \n 6. Productos del agro");
+        int option = Integer.parseInt(input.nextLine());
+        String election = "";
+        switch (option){
+            case 1:
+                election = "CANASTA";
+                break;
+            case 2:
+                election = "LICOR";
+                break;
+            case 3:
+                election = "ASEO";
+                break;
+            case 4:
+                election = "PERSONAL";
+                break;
+            case 5:
+                election = "ELECTRODOMESTICO";
+                break;
+            case 6:
+                election = "FRUTAS";
+                break;
+            default:
+                election = "CANASTA";
+                break;
+        }
+        return election;
+    }
+
+    public int buyMenu(){
+        System.out.println("Desea comprar algo:\n 1.Comprar un producto\n 2.Filtrar por otro producto \n 3. generar factura y salir");
         return Integer.parseInt(input.nextLine());
     }
 }

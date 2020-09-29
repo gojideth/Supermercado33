@@ -12,6 +12,7 @@ import model.supermarket.Quantity;
  */
 public class Liquor extends Product {
     private int alcoholAmount;
+    private double tax;
 
     /**
      * Constructor que crea productos de tipo aseo personal
@@ -22,7 +23,7 @@ public class Liquor extends Product {
      * @param quantity Cantidad de la presentacion
      * @param alcoholAmount Porcentaje de alcohol
      */
-    public Liquor(double price, String name, int quantityForSold, double priceOfProvider, Quantity quantity, int alcoholAmount) {
+    public Liquor(double price, String name, int quantityForSold, double priceOfProvider, Quantity quantity, double tax ,int alcoholAmount) {
         super(price, name, quantityForSold, priceOfProvider, quantity);
         this.alcoholAmount=alcoholAmount;
     }
