@@ -20,8 +20,8 @@ public class Manager {
      */
 
     public Manager(Market myMarket) {
-        this.myMarket = new Market();
-        this.administrator = new Administration(myMarket);
+        this.myMarket = myMarket;
+        this.administrator = new Administration(this.myMarket);
         this.client = null;
     }
 
