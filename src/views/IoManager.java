@@ -272,7 +272,7 @@ public  class IoManager{
 
     public String typeForFilter(){
         System.out.println("Porque tipo de prodcuto desea filtrar :");
-        System.out.println(" 1. canasta(comida)\n 2. Licores \n. 3. Aseo para hogar\n 4. Aseo personal \n 5. Electrodomesticos \n 6. Productos del agro");
+        System.out.println(" 1. canasta(comida)\n 2. Licores \n 3. Aseo para hogar\n 4. Aseo personal \n 5. Electrodomesticos \n 6. Productos del agro");
         int option = Integer.parseInt(input.nextLine());
         String election = "";
         switch (option){

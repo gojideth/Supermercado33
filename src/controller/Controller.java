@@ -91,33 +91,47 @@ public class Controller {
     public void clientMenu(){
         if (manager.getClient() != null){
             int option = ioManager.chooseFilter();
+            Client tempClient = manager.getClient();
             switch (option) {
                 case 1:
-                    manager.getClient().filterType(ioManager.typeForFilter());
+                    tempClient.filterType(ioManager.typeForFilter());
+                    tempClient.showCar();
                     break;
                 case 2:
-                    manager.getClient().filterRangePrices(ioManager.minPrice(), ioManager.maxPrice());
+                    tempClient.filterRangePrices(ioManager.minPrice(), ioManager.maxPrice());
+                    tempClient.showCar();
                     break;
                 case 3:
-                    manager.getClient().filterMaxPrice(ioManager.minPrice(), ioManager.typeForFilter());
+                    tempClient.filterMaxPrice(ioManager.minPrice(), ioManager.typeForFilter());
+                    tempClient.showCar();
                     break;
                 case 4:
-                    manager.getClient().filterMaxPrice(ioManager.minPrice());
+                    tempClient.filterMaxPrice(ioManager.minPrice());
+                    tempClient.showCar();
                     break;
                 case 5:
-                    manager.getClient().filterLowerPrice(ioManager.maxPrice(), ioManager.typeForFilter());
+                    tempClient.filterLowerPrice(ioManager.maxPrice(), ioManager.typeForFilter());
+                    tempClient.showCar();
                     break;
                 case 6:
-                    manager.getClient().filterLowerPrice(ioManager.maxPrice());
+                    tempClient.filterLowerPrice(ioManager.maxPrice());
+                    tempClient.showCar();
                     break;
                 case 7:
+<<<<<<< HEAD
                     manager.getClient().getAllProducts();
                     break;
+=======
+                    tempClient.getAllProducts();
+                    tempClient.showCar();
+>>>>>>> 7d507690399defb8ea2901a3c74d457204184033
                 case 8:
-                    manager.getClient().filterName(ioManager.nameForProduct());
+                    tempClient.filterName(ioManager.nameForProduct());
+                    tempClient.showCar();
                     break;
                 default:
-                    manager.getClient().getAllProducts();
+                    tempClient.getAllProducts();
+                    tempClient.showCar();
                     break;
             }
             System.out.println(manager.getClient().getCar().size());
