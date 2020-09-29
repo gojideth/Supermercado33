@@ -86,59 +86,48 @@ public class Controller {
        adminMenu();
     }
 
-    // System.out.println("Filtrar por: \n 1. Tipo de producto \n 2. Rango de precio \n 3.max precio y tipo \n 4. Max precio \n 5. Min precio y tipo
-    // \n 6. Min precio \n 7. Ordenar Nombre \n 8. Buscar por nombre ");
+
     public void clientMenu(){
         if (manager.getClient() != null){
             int option = ioManager.chooseFilter();
-            Client tempClient = manager.getClient();
             switch (option) {
                 case 1:
-                    tempClient.filterType(ioManager.typeForFilter());
-                    tempClient.showCar();
+                    manager.getClient().filterType(ioManager.typeForFilter());
                     break;
                 case 2:
-                    tempClient.filterRangePrices(ioManager.minPrice(), ioManager.maxPrice());
-                    tempClient.showCar();
+                    manager.getClient().filterRangePrices(ioManager.minPrice(), ioManager.maxPrice());
                     break;
                 case 3:
-                    tempClient.filterMaxPrice(ioManager.minPrice(), ioManager.typeForFilter());
-                    tempClient.showCar();
+                    manager.getClient().filterMaxPrice(ioManager.minPrice(), ioManager.typeForFilter());
                     break;
                 case 4:
-                    tempClient.filterMaxPrice(ioManager.minPrice());
-                    tempClient.showCar();
+                    manager.getClient().filterMaxPrice(ioManager.minPrice());
                     break;
                 case 5:
-                    tempClient.filterLowerPrice(ioManager.maxPrice(), ioManager.typeForFilter());
-                    tempClient.showCar();
+                    manager.getClient().filterLowerPrice(ioManager.maxPrice(), ioManager.typeForFilter());
                     break;
                 case 6:
-                    tempClient.filterLowerPrice(ioManager.maxPrice());
-                    tempClient.showCar();
+                    manager.getClient().filterLowerPrice(ioManager.maxPrice());
                     break;
                 case 7:
-<<<<<<< HEAD
                     manager.getClient().getAllProducts();
                     break;
-=======
-                    tempClient.getAllProducts();
-                    tempClient.showCar();
->>>>>>> 7d507690399defb8ea2901a3c74d457204184033
                 case 8:
-                    tempClient.filterName(ioManager.nameForProduct());
-                    tempClient.showCar();
+                    manager.getClient().filterName(ioManager.nameForFilter());
                     break;
+                case 9:
+                    manager.getClient().generateBill();
+                    manager.deleteClient();
+                    masterMenu();
                 default:
-                    tempClient.getAllProducts();
-                    tempClient.showCar();
+                    manager.getClient().getAllProducts();
                     break;
             }
-            System.out.println(manager.getClient().getCar().size());
             manager.getClient().showCar();
             int choose = ioManager.buyMenu();
             switch (choose){
                 case 1:
+                    manager.getClient().showCar();
                     manager.getClient().buy(ioManager.getIndexOfProduct(), ioManager.getQuantityForBuy());
                     break;
                 case 2:
@@ -170,14 +159,16 @@ public class Controller {
     public static void main(String[] args) {
         Market supermercado33 = new Market();
         Administration administration = new Administration(supermercado33);
-        administration.addProduct(new PersonalCareProducts(8, "persona1", 1, 455, new Quantity(20, Denomination.GRAMS)));
-        administration.addProduct(new PersonalCareProducts(10, "persona2", 1, 455, new Quantity(20, Denomination.GRAMS)));
-        administration.addProduct(new PersonalCareProducts(12, "persona3", 1, 455, new Quantity(20, Denomination.GRAMS)));
-        administration.addProduct(new PersonalCareProducts(14, "persona4", 1, 455, new Quantity(20, Denomination.GRAMS)));
-        administration.addProduct(new PersonalCareProducts(20, "sable", 1, 455, new Quantity(20, Denomination.GRAMS)));
-        administration.addProduct(new Liquor(211,"rrr", 6,4,new Quantity(5, Denomination.GRAMS), 5,5));
-        administration.addProduct(new EarthProducts(5,"FF:3", 2, 5, new Quantity(7, Denomination.GRAMS)));
+        administration.addProduct(new PersonalCareProducts(2000, "Clorox", 1, 1200, new Quantity(20, Denomination.UNITS)));
+        administration.addProduct(new PersonalCareProducts(3600, "Mr musculo", 1, 1600, new Quantity(20, Denomination.UNITS)));
+        administration.addProduct(new PersonalCareProducts(2400, "Jabon loza", 1, 900, new Quantity(20, Denomination.UNITS)));
+        administration.addProduct(new Liquor(38000,"Smirnoff", 1,14000,new Quantity(20, Denomination.UNITS), 20,15));
+        administration.addProduct(new EarthProducts(800,"Pera", 1, 400, new Quantity(12, Denomination.GRAMS)));
+        administration.addProduct(new Basket(1100, "Panela", 4, 600, new Quantity(15, Denomination.UNITS)));
+        administration.addProduct(new Basket(1500, "Chocoramo", 1, 700, new Quantity(40, Denomination.UNITS)));
         administration.addProduct(new Basket(766, "gala", 2, 21, new Quantity(4, Denomination.UNITS)));
+        administration.addProduct(new Household(15000, "Plancha", 1, 50000, new Quantity(15, Denomination.UNITS), 8));
+        administration.addProduct(new Liquor(45000, "Lider",1, 21000, new Quantity(35, Denomination.UNITS), 12, 29));
         Manager manager = new Manager(supermercado33);
         new Controller(manager).masterMenu();
     }

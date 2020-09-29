@@ -20,19 +20,6 @@ public  class IoManager{
     }
 
     /**
-     * Método encargado de mostrar y leer opciones del menú
-     * @return La opción deseada del menú
-     */
-    public short readMenu() {
-        String menuText = "1. Adicionar Circulos\n" +
-                "2. Mostrar circulos \n" +
-                "3. Obtener intersecciones\n" +
-                "4. Salir del menú\n";
-
-        return readShort(menuText);
-    }
-
-    /**
      * Método que recibe una cadena de texto y la muestra
      * @param message El texto a mostrar
      */
@@ -137,7 +124,7 @@ public  class IoManager{
      * @return La opcion elegida
      */
     public int chooseFilter(){
-        System.out.println("Filtrar por: \n 1. Tipo de producto \n 2. Rango de precio \n 3. Max precio y tipo \n 4. Max precio \n 5. Min precio y tipo \n 6. Min precio \n 7. Ordenar Nombre \n 8. Buscar por nombre ");
+        System.out.println("Filtrar por: \n 1. Tipo de producto \n 2. Rango de precio \n 3. Max precio y tipo \n 4. Max precio \n 5. Min precio y tipo \n 6. Min precio \n 7. Extraer toda la lista \n 8. Buscar por nombre \n 9. generar factura");
         return Integer.parseInt(input.nextLine());
     }
 
@@ -251,7 +238,7 @@ public  class IoManager{
     }
 
     public int getQuantityForBuy(){
-        System.out.println("Ingrese la cantidad de gramos o unidades que comprara, tengo en cuenta la cantidad disponible que aparece a su izquierda");
+        System.out.println("Ingrese la cantidad de gramos o unidades que comprara, tengo en cuenta la cantidad disponible que aparece a la derecha");
         return Integer.parseInt(input.nextLine());
     }
 
