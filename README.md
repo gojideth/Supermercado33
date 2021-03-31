@@ -7,7 +7,7 @@
 Administrar una tienda nunca fue tan fácil
 
 
-# !Funcionalidades!
+# ¡Funcionalidades!
 
   - Haz un CRUD con tus productos (create, read, update y delete)
   - Filtra productos dependiendo del criterio elegido
