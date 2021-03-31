@@ -4,7 +4,8 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 >
-Administrar una tienda nunca fue tan fácil
+Administrar una tienda nunca fue tan fácil.
+
 
 
 # ¡Funcionalidades!
@@ -13,6 +14,7 @@ Administrar una tienda nunca fue tan fácil
   - Filtra productos dependiendo del criterio elegido
   - Administra tu negocio vendiendo productos mientras generas facturas por cada uno de ellos.
   - Permite incluir la cantidad de trabajadores y usuarios que desees.
+  - Interfaz totalmente en consola.
 
 
 
